@@ -4,10 +4,11 @@
   "description": "Course project for TA's Web Front-End course",
   "main": "server.js",
   "scripts": {
-    "test": "./sh/test.sh",
-    "start": "node server.js",
     "build": "./sh/build.sh",
-    "dev-server": "./sh/dev.sh"
+    "dev-server": "./sh/dev.sh",
+    "mongo": "./sh/mongo.sh",
+    "start": "node server.js",
+    "test": "./sh/test.sh"
   },
   "repository": {
     "type": "git",
