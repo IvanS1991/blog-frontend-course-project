@@ -1,12 +1,12 @@
 const { Router } = require('express');
-const usersController = require('./users.controller');
 
 const attach = (app, data) => {
   const router = new Router();
+  const usersController = require('./users.controller')(data);
 
-  router.get('/', (req, res, next) => {
-    res.send('OK');
-  });
+  router
+    .post('/', usersController.register)
+    .put('/', usersController.login);
 
   app.use('/users', router);
 };

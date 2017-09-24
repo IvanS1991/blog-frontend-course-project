@@ -4,8 +4,10 @@
   "description": "Course project for TA's Web Front-End course",
   "main": "server.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha ./**/*.tests.js",
-    "dev-server": "./node_modules/.bin/nodemon server.js"
+    "test": "./sh/test.sh",
+    "start": "node server.js",
+    "build": "./sh/build.sh",
+    "dev-server": "./sh/dev.sh"
   },
   "repository": {
     "type": "git",
