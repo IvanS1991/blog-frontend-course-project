@@ -53,14 +53,6 @@ npm run build
   category:string
 }
 ```
-**PUT /posts - Rate a post**
-```
-{
-  username:string,
-  postId:string,
-  value:+1/-1,
-}
-```
 **GET /posts/:postId - Get one post**
 **GET /posts/:category/:page/:size - Get list of posts**
 
@@ -68,17 +60,8 @@ npm run build
 **POST /comments - Create a new comment**
 ```
 {
-  threadId:string,
-  content:string
-}
-```
-**PUT /comments - Register a new user**
-```
-{
-  username:string,
-  threadId:string,
   postId:string,
-  value:+1/-1
+  content:string
 }
 ```
 

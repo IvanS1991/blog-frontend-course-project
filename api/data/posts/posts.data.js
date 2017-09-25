@@ -15,12 +15,6 @@ const postsData = (db) => {
     });
   };
 
-  const rate = (postId, value) => {
-    return new Promise((resolve, reject) => {
-      return resolve('TODO');
-    });
-  };
-
   const getOne = (id) => {
     return new Promise((resolve, reject) => {
       postsDb.findOne({ id }, (err, match) => {
@@ -59,7 +53,6 @@ const postsData = (db) => {
 
   return {
     create,
-    rate,
     getOne,
     getAll,
   };

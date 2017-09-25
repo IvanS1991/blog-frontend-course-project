@@ -10,9 +10,6 @@ const usersData = (db) => {
           if (err) {
             return reject(err);
           }
-          if (!match) {
-            return reject(new Error('No such user!'));
-          }
           return resolve(match);
         });
       })

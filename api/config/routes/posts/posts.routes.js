@@ -6,7 +6,6 @@ const attach = (app, data) => {
 
   router
     .post('/', postsController.create)
-    .put('/', postsController.rate)
     .get('/:postId', postsController.getOne)
     .get('/:category/:page', postsController.getAll);
 

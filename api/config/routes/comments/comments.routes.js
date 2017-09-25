@@ -5,8 +5,7 @@ const attach = (app, data) => {
   const commentsController = require('./comments.controller')(data);
 
   router
-    .post('/', commentsController.create)
-    .put('/', commentsController.rate);
+    .post('/', commentsController.create);
 
   app.use('/comments', router);
 };

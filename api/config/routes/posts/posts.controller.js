@@ -48,27 +48,10 @@ const controller = (data) => {
       });
   };
 
-  const rate = (req, res, next) => {
-    const postId = req.body.postId;
-    const value = req.body.value;
-
-    data.posts.rate(postId, value)
-      .then((result) => {
-        res.status(200)
-          .json({
-            result,
-          });
-      })
-      .catch((err) => {
-        next(err);
-      });
-  };
-
   return {
     create,
     getOne,
     getAll,
-    rate,
   };
 };
 

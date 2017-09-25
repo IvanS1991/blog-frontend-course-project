@@ -1,15 +1,12 @@
-const utils = require('../../utils/');
+const { Comment } = require('../comments/comment.model');
 
-class Post {
+class Post extends Comment {
   constructor(author, title, content, category) {
-    this.author = author;
+    super(author, content);
     this.title = title;
-    this.content = content;
     this.category = category;
-    this.id = utils.getPostId(title);
-    this.created = utils.getTime();
+    this.id = super.getId(title);
     this.comments = [];
-    this.rated = [];
   }
 }
 
