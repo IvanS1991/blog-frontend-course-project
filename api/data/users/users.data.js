@@ -3,6 +3,28 @@ const { User } = require('./user.model');
 const usersData = (db) => {
   const usersDb = db.collection('users');
 
+  const authUser = (req, res, next) => {
+    const authKey = req.headers['x-auth-key'];
+    return new Promise((resolve, reject) => {
+        usersDb.findOne({ authKey }, (err, match) => {
+          if (err) {
+            return reject(err);
+          }
+          if (!match) {
+            return reject(new Error('No such user!'));
+          }
+          return resolve(match);
+        });
+      })
+      .then((match) => {
+        req.user = match;
+        next();
+      })
+      .catch((err) => {
+        next(err);
+      });
+  };
+
   const register = (username, passHash, passHashRepeat) => {
     return new Promise((resolve, reject) => {
       if (passHash !== passHashRepeat) {
@@ -49,6 +71,7 @@ const usersData = (db) => {
   };
 
   return {
+    authUser,
     register,
     login,
   };

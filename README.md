@@ -31,16 +31,16 @@ npm run build
 **POST /users - Register a new user**
 ```
 {
-  username:...,
-  passHash:...,
-  passHashRepeat:...
+  username:string,
+  passHash:string,
+  passHashRepeat:string
 }
 ```
 **PUT /users - Login**
 ```
 {
-  username:...,
-  passHash:...
+  username:string,
+  passHash:string
 }
 ```
 
@@ -48,33 +48,37 @@ npm run build
 **POST /posts - Create a new post**
 ```
 {
-  title:...,
-  content:...
+  title:string,
+  content:string,
+  category:string
 }
 ```
 **PUT /posts - Rate a post**
 ```
 {
-  postId:...,
-  value:...,
+  username:string,
+  postId:string,
+  value:+1/-1,
 }
 ```
-**GET /posts/:category/:page/:size - Get posts**
+**GET /posts/:postId - Get one post**
+**GET /posts/:category/:page/:size - Get list of posts**
 
 ## Comments
 **POST /comments - Create a new comment**
 ```
 {
-  threadId:...,
-  content:...
+  threadId:string,
+  content:string
 }
 ```
 **PUT /comments - Register a new user**
 ```
 {
-  threadId:...,
-  postId:...,
-  value:...
+  username:string,
+  threadId:string,
+  postId:string,
+  value:+1/-1
 }
 ```
 

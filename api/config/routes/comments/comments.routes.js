@@ -1,8 +1,8 @@
 const { Router } = require('express');
-const commentsController = require('./comments.controller');
 
 const attach = (app, data) => {
   const router = new Router();
+  const commentsController = require('./comments.controller')(data);
 
   router
     .post('/', commentsController.create)

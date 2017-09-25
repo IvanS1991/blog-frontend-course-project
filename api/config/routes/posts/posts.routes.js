@@ -1,13 +1,14 @@
 const { Router } = require('express');
-const postsController = require('./posts.controller');
 
 const attach = (app, data) => {
   const router = new Router();
+  const postsController = require('./posts.controller')(data);
 
   router
     .post('/', postsController.create)
     .put('/', postsController.rate)
-    .get('/:category/:page/:size', postsController.getAll);
+    .get('/:postId', postsController.getOne)
+    .get('/:category/:page', postsController.getAll);
 
   app.use('/posts', router);
 };

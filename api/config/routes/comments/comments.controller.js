@@ -1,4 +1,4 @@
-const controller = (() => {
+const controller = (data) => {
   const create = (req, res, next) => {
 
   };
@@ -11,6 +11,6 @@ const controller = (() => {
     create,
     rate,
   };
-})();
+};
 
 module.exports = controller;
