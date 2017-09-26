@@ -35,8 +35,16 @@
   "dependencies": {
     "body-parser": "^1.18.1",
     "cors": "^2.8.4",
+    "crypto-js": "^3.1.9-1",
     "express": "^4.15.4",
+    "handlebars": "^4.0.10",
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1",
     "mongodb": "^2.2.31",
-    "morgan": "^1.8.2"
+    "morgan": "^1.8.2",
+    "navigo": "^5.3.1",
+    "systemjs": "^0.20.19",
+    "systemjs-plugin-babel": "0.0.25",
+    "toastr": "^2.1.2"
   }
 }
