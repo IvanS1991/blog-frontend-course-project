@@ -1,11 +1,11 @@
+/* globals $ */
+
 import Navigo from 'navigo';
 
 import 'jquery';
 
-import { homeController } from 'home-controller';
-import { usersController } from 'users-controller';
-import { postsController } from 'posts-controller';
-import { commentsController } from 'comments-controller';
+import * as postsController from 'posts-controller';
+import * as error from 'error';
 
 const appRoot = 'http://localhost:8000/';
 const useHash = true;
@@ -13,26 +13,29 @@ const hash = '#!';
 
 const routes = {
   home: '/home',
-  users: '/users',
-  posts: '/posts',
-  comments: '/comments',
+  categories: '/categories/:category/:page',
+  post: '/posts/:id',
+  notFound: '**',
 };
 
 const router = new Navigo(appRoot, useHash, hash);
 
 router
   .navigate(`${hash}${routes.home}`)
-  .on(routes.home, homeController.render)
-  .on(routes.users, usersController.render)
-  .on(routes.posts, postsController.render)
-  .on(routes.comments, commentsController.render)
+  .on(routes.home, postsController.getAll)
+  .on(routes.categories, postsController.getByCategory)
+  .on(routes.post, postsController.getById)
+  .on(routes.notFound, error.notFound)
   .resolve();
 
-const check = () => {
+const checkLoggedIn = () => {
   $('#nav-log-in').html('works');
 };
 
-check()
-window.addEventListener('hashchange', check);
+checkLoggedIn();
+window.addEventListener('hashchange', checkLoggedIn);
 
-export { router };
+export {
+  router,
+  checkLoggedIn,
+};

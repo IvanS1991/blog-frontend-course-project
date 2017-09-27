@@ -1,3 +1,5 @@
+/* globals System */
+
 System.config({
   transpiler: 'plugin-babel',
   map: {
@@ -9,15 +11,13 @@ System.config({
       'toastr': '/lib/toastr/toastr.js',
       'jquery-ui': '/lib/jquery-ui/jquery-ui.js',
       'navigo': '/lib/navigo/lib/navigo.min.js',
-      'handlebars': '/lib/handlebars/handlebars.js',
-      'crypto-js': '/lib/cryptojs-sha1/cryptojs-sha1.js',
+      'handlebars': '/lib/handlebars/dist/handlebars.min.js',
 
       // APP HELPERS
-      'validator': 'js/validator.js',
-      'parse-query': 'js/parse-query.js',
-      'json-requester': 'js/json-requester.js',
+      'requester': 'js/requester.js',
       'data': 'js/data.js',
       'templates': 'js/templates.js',
+      'error': 'js/error.js',
 
       //  APP CONTROLLERS
       'home-controller': 'js/controllers/home.controller.js',
@@ -25,8 +25,8 @@ System.config({
       'posts-controller': 'js/controllers/posts.controller.js',
       'comments-controller': 'js/controllers/comments.controller.js',
       // APP
-      'app': 'js/app.js'
-  }
+      'app': 'js/app.js',
+  },
 });
 
 System.import('app');
