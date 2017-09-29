@@ -32,6 +32,8 @@ class PostsData extends Data {
     let url = `${this.baseUrl}/${type}`;
     if (type !== 'all') {
       url += `/${category}/${page}`;
+    } else {
+      url += `/${page}`;
     }
     console.log(url);
     return requester.getJson(url);

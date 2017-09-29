@@ -1,5 +1,5 @@
 {{#if this.username}}
-  has user
+  {{this.username}}, <a href="#" data-navigo>Logout</a>
 {{else}}
-  no user
+  <a href="#" data-navigo>Sign in</a><span>or</span><a href="#" data-navigo>Sign out</a>
 {{/if}}

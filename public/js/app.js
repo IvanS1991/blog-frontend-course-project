@@ -32,7 +32,7 @@ window.addEventListener('hashchange', checkLoggedIn);
 const updateCategories = () => {
   const containerId = '#nav-main';
   let categoriesList;
-  postsController.getCategories()
+  return postsController.getCategories()
     .then((categories) => {
       categoriesList = categories;
       return templates.get('nav-main');
@@ -43,7 +43,11 @@ const updateCategories = () => {
     });
 };
 
-updateCategories();
+updateCategories()
+  .then(() => {
+    $('#loading').addClass('hidden');
+    $('#wrapper').removeClass('hidden');
+  });
 
 export {
   router,
