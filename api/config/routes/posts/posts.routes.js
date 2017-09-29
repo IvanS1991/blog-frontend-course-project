@@ -7,8 +7,9 @@ const attach = (app, data) => {
   router
     .post('/', postsController.create)
     .get('/categories', postsController.getCategories)
+    .get('/all/:page', postsController.getAll)
     .get('/:postId', postsController.getOne)
-    .get('/:category/:subCategory/:page', postsController.getAll);
+    .get('/:type/:category/:page', postsController.getAll);
 
   app.use('/posts', router);
 };

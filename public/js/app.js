@@ -39,6 +39,7 @@ const updateCategories = () => {
     })
     .then((template) => {
       $(containerId).html(template(categoriesList));
+      router.updatePageLinks();
     });
 };
 

@@ -53,8 +53,10 @@ npm run build
   category:string
 }
 ```
+**GET /posts/categories - Get all existing categories and their subcategories**
 **GET /posts/:postId - Get one post**
-**GET /posts/:category/:page/:size - Get list of posts**
+**GET /posts/all/:page - Get a page of posts in all existing categories and subcategories**
+**GET /posts/:type/:category/:page - Get a page of posts in a main/sub category**
 
 ## Comments
 **POST /comments - Create a new comment**

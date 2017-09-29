@@ -28,16 +28,12 @@ const postsData = (db) => {
     });
   };
 
-  const getAll = (category, page) => {
-    let filter = {};
-
-    if (category.main !== 'all') {
-      filter = category;
-    }
-
+  const getAll = (filter, page) => {
     const size = 12;
     const startIndex = (page - 1) * size;
     const endIndex = page * size;
+
+    console.log(filter);
 
     return new Promise((resolve, reject) => {
       postsDb.find(filter)

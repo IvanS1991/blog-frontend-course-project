@@ -5,7 +5,7 @@ import { templates } from 'templates';
 
 const getAll = () => {
   let postsList;
-  postsData.getByCategory('all', 'none', 1)
+  postsData.getByCategory(null, 'all', 1)
     .then((response) => {
       postsList = response;
       return templates.get('posts-list');
@@ -22,8 +22,12 @@ const getById = (params) => {
 
 const getByCategory = (params) => {
   const category = params.category;
+  const type = params.type;
   const page = params.page;
-  console.log(category, page);
+  postsData.getByCategory(category, type, page)
+    .then((posts) => {
+      console.log(posts);
+    });
 };
 
 const getCategories = () => {

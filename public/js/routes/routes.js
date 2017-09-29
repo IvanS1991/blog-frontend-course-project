@@ -3,7 +3,7 @@ import * as error from 'error';
 
 const routes = {
   home: '/home',
-  categories: '/categories/:category/:page',
+  category: '/category/:type/:category/:page',
   post: '/posts/:id',
   notFound: '**',
 };
@@ -12,7 +12,7 @@ const attachTo = (router) => {
   router
     .navigate(`${routes.home}`)
     .on(routes.home, postsController.getAll)
-    .on(routes.categories, postsController.getByCategory)
+    .on(routes.category, postsController.getByCategory)
     .on(routes.post, postsController.getById)
     .on(routes.notFound, error.notFound)
     .resolve();

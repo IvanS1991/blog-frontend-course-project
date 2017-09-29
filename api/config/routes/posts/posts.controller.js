@@ -41,19 +41,20 @@ const controller = (data) => {
   };
 
   const getAll = (req, res, next) => {
-    const mainCategory = req.params.category;
-    const subCategory = req.params.subCategory;
-    const category = {};
-    if (mainCategory !== 'all') {
-      category.category = mainCategory;
-      if (subCategory !== 'none') {
-        category.subCategory = subCategory;
-      }
+    const type = req.params.type;
+    const category = req.params.category;
+
+    const filter = {};
+
+    if (type === 'main') {
+      filter.category = category;
+    } else if (type === 'sub') {
+      filter.subCategory = category;
     }
 
     const page = parseInt(req.params.page, 10);
 
-    data.posts.getAll(category, page)
+    data.posts.getAll(filter, page)
       .then((posts) => {
         res.status(200)
           .json({
