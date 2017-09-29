@@ -1,0 +1,12 @@
+<ul class="category">
+  {{#each this}}
+    <li class="category-name">
+      <a href="/category/{{this.categoryName}}/none/1">{{this.categoryName}}</a>
+      <ul class="subcategory">
+        {{#each this.sub}}
+          <li class="subcategory-name"><a href="/category/{{this.categoryName}}/{{this}}/1">{{this}}</a></li>
+        {{/each}}
+      </ul>
+    </li>
+  {{/each}}
+</ul>

@@ -14,10 +14,11 @@ System.config({
       'handlebars': '/lib/handlebars/dist/handlebars.min.js',
 
       // APP HELPERS
-      'requester': 'js/requester.js',
-      'data': 'js/data.js',
-      'templates': 'js/templates.js',
-      'error': 'js/error.js',
+      'requester': 'js/helpers/requester.js',
+      'templates': 'js/helpers/templates.js',
+      'error': 'js/helpers/error.js',
+      'routes': 'js/routes/routes.js',
+      'data': 'js/data/data.js',
 
       //  APP CONTROLLERS
       'home-controller': 'js/controllers/home.controller.js',

@@ -1,17 +1,17 @@
-import { router } from 'app';
+/* globals $ */
+import { router, contentContainer } from 'app';
 import { postsData } from 'data';
 import { templates } from 'templates';
 
 const getAll = () => {
-  let result;
-  postsData.getByCategory('all', 1)
+  let postsList;
+  postsData.getByCategory('all', 'none', 1)
     .then((response) => {
-      result = response;
-      console.log(result);
+      postsList = response;
       return templates.get('posts-list');
     })
     .then((template) => {
-      console.log(template(result));
+      $(contentContainer).html(template(postsList));
     });
 };
 
@@ -26,8 +26,13 @@ const getByCategory = (params) => {
   console.log(category, page);
 };
 
+const getCategories = () => {
+  return postsData.getCategories();
+};
+
 export {
   getAll,
   getByCategory,
   getById,
+  getCategories,
 };

@@ -28,13 +28,18 @@ class PostsData extends Data {
     super(baseUrl);
   }
 
-  getByCategory(category, page) {
-    const url = `${this.baseUrl}/${category}/${page}`;
+  getByCategory(category, subCategory, page) {
+    const url = `${this.baseUrl}/${category}/${subCategory}/${page}`;
     return requester.getJson(url);
   }
 
   getById(id) {
     const url = `${this.baseUrl}/${id}`;
+    return requester.getJson(url);
+  }
+
+  getCategories() {
+    const url = `${this.baseUrl}/categories`;
     return requester.getJson(url);
   }
 }

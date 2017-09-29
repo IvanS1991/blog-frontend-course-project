@@ -1,9 +1,14 @@
 import { router } from 'app';
 
-const usersController = {
-  render: () => {
-    console.log('Users');
-  },
+const register = () => {
+
 };
 
-export { usersController };
+const login = () => {
+
+};
+
+export {
+  register,
+  login,
+};

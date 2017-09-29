@@ -3,7 +3,12 @@ const controller = (data) => {
     const author = req.user.username;
     const title = req.body.title;
     const content = req.body.content;
-    const category = req.body.category;
+    const main = req.body.category;
+    const sub = req.body.subCategory;
+    const category = {
+      main,
+      sub,
+    };
 
     data.posts.create(author, title, content, category)
       .then((postId) => {
@@ -11,6 +16,10 @@ const controller = (data) => {
           .json({
             postId,
           });
+        return data.posts.createCategory(category);
+      })
+      .then((result) => {
+        console.log(result);
       })
       .catch((err) => {
         next(err);
@@ -32,7 +41,16 @@ const controller = (data) => {
   };
 
   const getAll = (req, res, next) => {
-    const category = req.params.category;
+    const mainCategory = req.params.category;
+    const subCategory = req.params.subCategory;
+    const category = {};
+    if (mainCategory !== 'all') {
+      category.category = mainCategory;
+      if (subCategory !== 'none') {
+        category.subCategory = subCategory;
+      }
+    }
+
     const page = parseInt(req.params.page, 10);
 
     data.posts.getAll(category, page)
@@ -48,10 +66,19 @@ const controller = (data) => {
       });
   };
 
+  const getCategories = (req, res, next) => {
+    data.posts.getCategories()
+      .then((categories) => {
+        res.status(200)
+          .send(categories);
+      });
+  };
+
   return {
     create,
     getOne,
     getAll,
+    getCategories,
   };
 };
 
