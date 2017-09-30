@@ -1,12 +1,12 @@
 <ul class="nav nav-left">
-  <li><a href="/home" data-navigo>Home</a></li>
-  <li><a href="#" data-navigo>Create new post...</a></li>
+  <li><a href="/home" class="text-white" data-navigo>Home</a></li>
+  <li><a href="#" class="text-white" data-navigo>Create new post...</a></li>
   {{#each this}}
     <li class="category-name">
-      <a href="/category/main/{{this.categoryName}}/1" data-navigo>{{this.categoryName}}</a>
+      <a href="/category/main/{{this.categoryName}}/1" class="text-white" data-navigo>{{this.categoryName}}</a>
       <ul class="subcategory">
         {{#each this.sub}}
-          <li class="subcategory-name"><a href="/category/sub/{{this}}/1" data-navigo>{{this}}</a></li>
+          <li class="subcategory-name"><a href="/category/sub/{{this}}/1" class="text-white" data-navigo>{{this}}</a></li>
         {{/each}}
       </ul>
     </li>
