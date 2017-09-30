@@ -1,9 +1,19 @@
 {{#each this.posts}}
   <article class="post-container">
-    <h4><a href="/posts/{{id}}" class="post-title" data-navigo>{{title}}</a></h4>
-    <p>Author: {{author}}</p>
-    <p>{{content}}</p>
-    <p>Category: {{category}} >> {{subCategory}}
-    </p>
+    <div class="post-categories-container">
+      <div class="post-category-headers">
+        <h2 class="post-category-container"><a href="/category/main/{{category}}/1" class="post-category main" data-navigo>{{category}}</a></h2>
+        <h3 class="post-category-container"><a href="/category/sub/{{subCategory}}/1" class="post-category sub" data-navigo>{{subCategory}}</a></h3>
+      </div>
+    </div>
+    <div class="post-title-container">
+      <h4><a href="/posts/{{id}}" class="post-title" data-navigo>{{title}}</a></h4>
+    </div>
+    <div class="post-author-container">
+      <p class="post-author">Posted by {{author}}</p>
+    </div>
+    <div class="post-content-container">
+      <p class="post-content">{{content}}</p>
+    </div>
   </article>
 {{/each}}

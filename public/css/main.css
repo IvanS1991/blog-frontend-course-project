@@ -1,0 +1,43 @@
+#wrapper {
+  
+}
+
+.post-categories-container {
+  background-image: url('https://dummyimage.com/200/b0b0b0/ffffff.png&text=Dummy');
+  background-repeat: none;
+
+  height: 200px;
+}
+
+.post-category-headers {
+  float: right;
+}
+
+.post-category-container {
+  margin: 0;
+}
+
+.post-category {
+  margin: 0;
+  color: white;
+  text-decoration: none;
+}
+
+.main {
+  background-color: red;
+}
+
+.sub {
+  background-color: blue;
+}
+
+.post-container {
+  float: left;
+  width: 15%;
+  margin: 0.5%;
+}
+
+.post-content-container {
+  border-top: 1px dashed gray;
+  border-botton: 5px 
+}

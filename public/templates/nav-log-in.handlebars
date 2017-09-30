@@ -1,5 +1,7 @@
-{{#if this.username}}
-  {{this.username}}, <a href="#" data-navigo>Logout</a>
-{{else}}
-  <a href="#" data-navigo>Sign in</a><span>or</span><a href="#" data-navigo>Sign out</a>
-{{/if}}
+<ul class="nav nav-right"></ul>
+  {{#if this.username}}
+    <li><span>{{this.username}}, </span><a href="#" data-navigo>Logout</a></li>
+  {{else}}
+    <li><a href="#" data-navigo>Sign in</a><span>or</span><a href="#" data-navigo>Sign out</a></li>
+  {{/if}}
+</ul>

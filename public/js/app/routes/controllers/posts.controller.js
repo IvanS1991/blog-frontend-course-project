@@ -8,6 +8,9 @@ const getAll = () => {
   postsData.getByCategory(null, 'all', 1)
     .then((response) => {
       postsList = response;
+      postsList.posts.forEach((post) => {
+          post.content = post.content.slice(0, 100) + '...';
+        });
       return templates.get('posts-list');
     })
     .then((template) => {
@@ -37,10 +40,14 @@ const getByCategory = (params) => {
   postsData.getByCategory(category, type, page)
     .then((response) => {
       postsList = response;
+      postsList.posts.forEach((post) => {
+          post.content = post.content.slice(0, 100) + '...';
+        });
       return templates.get('posts-list');
     })
     .then((template) => {
       $(app.contentContainer).html(template(postsList));
+      app.router.updatePageLinks();
     });
 };
 

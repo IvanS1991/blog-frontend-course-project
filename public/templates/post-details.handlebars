@@ -1,1 +1,9 @@
-<h1>{{this.post.id}}</h1>
+<h2>{{this.post.title}}</h2>
+<p>Posted by {{this.post.title}} in {{this.post.category}} >> {{this.post.subCategory}} | {{this.count.length}} comments</p>
+<p>{{this.post.content}}</p>
+<hr>
+{{#each this.post.comments}}
+  <h4>{{author}}</h4>
+  <p>{{content}}</p>
+  <hr>
+{{/each}}

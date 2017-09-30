@@ -9,8 +9,9 @@ const controller = (data) => {
       main,
       sub,
     };
+    const tags = req.body.tags;
 
-    data.posts.create(author, title, content, category)
+    data.posts.create(author, title, content, category, tags)
       .then((postId) => {
         res.status(200)
           .json({

@@ -5,8 +5,8 @@ const postsData = (db) => {
   const postsDb = db.collection('posts');
   const categoriesDb = db.collection('categories');
 
-  const create = (author, title, content, category) => {
-    const post = new Post(author, title, content, category);
+  const create = (author, title, content, category, tags) => {
+    const post = new Post(author, title, content, category, tags);
     return new Promise((resolve, reject) => {
         postsDb.insertOne(post, (err, result) => {
           if (err) {
