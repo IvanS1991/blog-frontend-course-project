@@ -1,5 +1,5 @@
 /* globals $ */
-import { router, contentContainer } from 'app';
+import * as app from 'app';
 import { postsData } from 'data';
 import { templates } from 'templates';
 
@@ -11,22 +11,36 @@ const getAll = () => {
       return templates.get('posts-list');
     })
     .then((template) => {
-      $(contentContainer).html(template(postsList));
+      $(app.contentContainer).html(template(postsList));
+      app.router.updatePageLinks();
     });
 };
 
 const getById = (params) => {
   const id = params.id;
-  console.log(id);
+  let post;
+  postsData.getById(id)
+    .then((response) => {
+      post = response;
+      return templates.get('post-details');
+    })
+    .then((template) => {
+      $(app.contentContainer).html(template(post));
+    });
 };
 
 const getByCategory = (params) => {
   const category = params.category;
   const type = params.type;
   const page = params.page;
+  let postsList;
   postsData.getByCategory(category, type, page)
-    .then((posts) => {
-      console.log(posts);
+    .then((response) => {
+      postsList = response;
+      return templates.get('posts-list');
+    })
+    .then((template) => {
+      $(app.contentContainer).html(template(postsList));
     });
 };
 

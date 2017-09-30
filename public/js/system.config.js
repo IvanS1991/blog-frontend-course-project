@@ -17,17 +17,23 @@ System.config({
       'requester': 'js/helpers/requester.js',
       'templates': 'js/helpers/templates.js',
       'error': 'js/helpers/error.js',
-      'routes': 'js/routes/routes.js',
+      'routes': 'js/app/routes/routes.js',
       'data': 'js/data/data.js',
+      'update-categories': 'js/helpers/update-categories.js',
+      'check-logged-in': 'js/helpers/check-logged-in.js',
 
-      //  APP CONTROLLERS
-      'home-controller': 'js/controllers/home.controller.js',
-      'users-controller': 'js/controllers/users.controller.js',
-      'posts-controller': 'js/controllers/posts.controller.js',
-      'comments-controller': 'js/controllers/comments.controller.js',
+      // APP CONTROLLERS
+      'home-controller': 'js/app/routes/controllers/home.controller.js',
+      'users-controller': 'js/app/routes/controllers/users.controller.js',
+      'posts-controller': 'js/app/routes/controllers/posts.controller.js',
+      'comments-controller': 'js/app/routes/controllers/comments.controller.js',
+
       // APP
-      'app': 'js/app.js',
+      'app': 'js/app/app.js',
+
+      // MAIN
+      'main': 'js/main.js',
   },
 });
 
-System.import('app');
+System.import('main');

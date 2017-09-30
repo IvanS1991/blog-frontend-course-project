@@ -28,7 +28,7 @@ npm run build
 
 # API Endpoints
 ## Users
-**POST /users - Register a new user**
+* **POST /users** - Register a new user
 ```
 {
   username:string,
@@ -36,7 +36,7 @@ npm run build
   passHashRepeat:string
 }
 ```
-**PUT /users - Login**
+* **PUT /users** - Login
 ```
 {
   username:string,
@@ -45,7 +45,7 @@ npm run build
 ```
 
 ## Posts
-**POST /posts - Create a new post**
+* **POST /posts** - Create a new post
 ```
 {
   title:string,
@@ -53,13 +53,13 @@ npm run build
   category:string
 }
 ```
-**GET /posts/categories - Get all existing categories and their subcategories**
-**GET /posts/:postId - Get one post**
-**GET /posts/all/:page - Get a page of posts in all existing categories and subcategories**
-**GET /posts/:type/:category/:page - Get a page of posts in a main/sub category**
+* **GET /posts/categories** - Get all existing categories and their subcategories
+* **GET /posts/:postId** - Get one post
+* **GET /posts/all/:page** - Get a page of posts in all existing categories and subcategories
+* **GET /posts/:type/:category/:page** - Get a page of posts in a main/sub category
 
 ## Comments
-**POST /comments - Create a new comment**
+* **POST /comments** - Create a new comment
 ```
 {
   postId:string,

@@ -35,7 +35,6 @@ class PostsData extends Data {
     } else {
       url += `/${page}`;
     }
-    console.log(url);
     return requester.getJson(url);
   }
 
