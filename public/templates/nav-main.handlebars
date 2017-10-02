@@ -1,14 +1,19 @@
 <ul class="nav nav-left">
-  <li><a href="/home" class="text-white" data-navigo>Home</a></li>
-  <li><a href="#" class="text-white" data-navigo>Create new post...</a></li>
+  <li class="nav-item"><a href="/home" class="nav-link focused" data-navigo>Home</a></li>
   {{#each this}}
-    <li class="category-name">
-      <a href="/category/main/{{this.categoryName}}/1" class="text-white" data-navigo>{{this.categoryName}}</a>
-      <ul class="subcategory">
+  <li class="nav-item">
+    <ul class="dropdown">
+      <li class="dropdown-trigger selected">
+        <a href="/category/main/{{this.categoryName}}/1" class="nav-link" data-navigo><span class="category">{{this.categoryName}}</span></a>
+      </li>
+      <li class="dropdown-container">
+        <ul class="dropdown-items">
         {{#each this.sub}}
-          <li class="subcategory-name"><a href="/category/sub/{{this}}/1" class="text-white" data-navigo>{{this}}</a></li>
+          <li class="dropdown-item"><a href="/category/sub/{{this}}/1" class="nav-link" data-navigo><sup>>></sup><span class="category">{{this}}</span></a></li>
         {{/each}}
-      </ul>
-    </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
   {{/each}}
 </ul>

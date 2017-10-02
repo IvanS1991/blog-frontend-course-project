@@ -1,9 +1,13 @@
-* {
-  font-family: sans;
-  text-transform: uppercase;
+@font-face {
+  font-family: 'LGothic';
+  src: url('../fonts/LeagueGothic-Regular.otf');
 }
 
 body {
+  font-family: 'LGothic';
+  font-size: 1.5em;
+  font-weight: 200;
+  text-transform: uppercase;
   background: #1d1d1d; /* Old browsers */
   background: -moz-linear-gradient(left, #1d1d1d 0%, #323232 31%, #323232 73%, #1d1d1d 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(left, #1d1d1d 0%,#323232 31%,#323232 73%,#1d1d1d 100%); /* Chrome10-25,Safari5.1-6 */
@@ -14,48 +18,10 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
 #wrapper {
-  
-}
-
-.post-categories-container {
-  background-image: url('https://dummyimage.com/200/b0b0b0/ffffff.png&text=Dummy');
-  background-repeat: none;
-
-  height: 200px;
-}
-
-.post-category-headers {
-  float: right;
-}
-
-.post-category-container {
-  margin: 0;
-}
-
-.post-category {
-  margin: 0;
-  color: white;
-  text-decoration: none;
-}
-
-.main {
-  background-color: #9a1d0d;
-}
-
-.sub {
-  background-color: blue;
-}
-
-.post-container {
-  background-color: white;
-  padding: 0.5%;
-  float: left;
-  width: 14.5%;
-  margin: 0.5%;
-}
-
-.post-content-container {
-  border-top: 1px dashed gray;
-  border-botton: 5px 
+  padding: 100px;
 }

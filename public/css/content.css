@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+}
+
+.post-categories-container {
+  background-image: url('https://dummyimage.com/200/b0b0b0/ffffff.png&text=Dummy');
+  background-repeat: none;
+
+  height: 200px;
+}
+
+.post-category-headers {
+  float: right;
+}
+
+.post-category-container {
+  margin: 0;
+}
+
+.post-category {
+  margin: 0;
+  color: white;
+  text-decoration: none;
+}
+
+.main {
+  background-color: #9a1d0d;
+}
+
+.sub {
+  background-color: blue;
+}
+
+.post-container {
+  background-color: white;
+  padding: 0.5%;
+  float: left;
+  width: 14.5%;
+  margin: 0.5%;
+}
+
+.post-content-container {
+  font-family: sans-serif;
+  text-transform: none;
+  border-top: 1px dashed gray;
+}
