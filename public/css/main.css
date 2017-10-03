@@ -3,10 +3,19 @@
   src: url('../fonts/LeagueGothic-Regular.otf');
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  cursor: pointer;
+}
+
 body {
   font-family: 'LGothic';
   font-size: 1.5em;
-  font-weight: 200;
+  font-weight: normal;
   text-transform: uppercase;
   background: #1d1d1d; /* Old browsers */
   background: -moz-linear-gradient(left, #1d1d1d 0%, #323232 31%, #323232 73%, #1d1d1d 100%); /* FF3.6-15 */
@@ -23,5 +32,8 @@ ul {
 }
 
 #wrapper {
-  padding: 100px;
+}
+
+#wrapper-upper {
+  padding: 100px 50px;
 }
