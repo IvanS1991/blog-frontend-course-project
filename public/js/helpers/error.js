@@ -1,9 +1,7 @@
 /* globals toastr */
 
-import { templates } from 'templates';
-
 const notFound = () => {
-  console.log('Not found');
+  toastr.error('Page not found!');
 };
 
 const handle = (err) => {

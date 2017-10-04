@@ -1,13 +1,13 @@
 footer {
-  clear: both;
-  display: flex;
-  justify-content: space-between;
-  padding: 2em 5em;
-  border-top: 1px solid grey;
   background: #1d1d1d; /* Old browsers */
   background: -moz-linear-gradient(left, #1d1d1d 0%, #282828 31%, #282828 73%, #1d1d1d 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(left, #1d1d1d 0%,#282828 31%,#282828 73%,#1d1d1d 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #1d1d1d 0%,#282828 31%, #282828 73%,#1d1d1d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  border-top: 1px solid grey;
+  clear: both;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 5em;
 }
 
 .dummy-widget {

@@ -1,5 +1,4 @@
 /* globals $, toastr */
-import { router } from 'app';
 import { usersData } from 'data';
 import * as error from 'error';
 import * as nav from 'update-nav';

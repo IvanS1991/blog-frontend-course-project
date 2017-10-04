@@ -5,6 +5,35 @@ import { templates } from 'templates';
 import * as error from 'error';
 import * as nav from 'update-nav';
 
+let allPosts = false;
+let postsList;
+let pageCount;
+let category;
+
+const fetchPostsData = (response) => {
+  postsList = response;
+  pageCount = Math.ceil(postsList.count / 12);
+  category = postsList.category;
+  postsList.posts.forEach((post) => {
+      post.content = post.content.slice(0, 100) + '...';
+    });
+  return templates.get('posts-list');
+};
+
+const renderPostsList = (template) => {
+  $(app.contentContainer).html(template(postsList));
+  return templates.get('pagination');
+};
+
+const renderPagination = (template) => {
+  $(app.paginationContainer).html(template({
+    pageCount,
+    category,
+    allPosts,
+  }));
+  app.router.updatePageLinks();
+};
+
 const createPost = () => {
   const postData = {
     title: $('#tb-post-title').val(),
@@ -31,32 +60,11 @@ const createPost = () => {
 const getAll = (params) => {
   params = params || {};
   const page = params.page || 1;
-  const allPosts = true;
-  let postsList;
-  let pageCount;
-  let category;
+  allPosts = true;
   postsData.getByCategory(null, 'all', page)
-    .then((response) => {
-      postsList = response;
-      pageCount = Math.ceil(postsList.count / 12);
-      category = postsList.category;
-      postsList.posts.forEach((post) => {
-          post.content = post.content.slice(0, 100) + '...';
-        });
-      return templates.get('posts-list');
-    })
-    .then((template) => {
-      $(app.contentContainer).html(template(postsList));
-      return templates.get('pagination');
-    })
-    .then((template) => {
-      $(app.paginationContainer).html(template({
-        pageCount,
-        category,
-        allPosts,
-      }));
-      app.router.updatePageLinks();
-    });
+    .then(fetchPostsData)
+    .then(renderPostsList)
+    .then(renderPagination);
 };
 
 const getById = (params) => {
@@ -73,31 +81,13 @@ const getById = (params) => {
 };
 
 const getByCategory = (params) => {
-  const category = params.category;
+  const postsCategory = params.category;
   const type = params.type;
   const page = params.page;
-  let postsList;
-  let pageCount;
-  postsData.getByCategory(category, type, page)
-    .then((response) => {
-      postsList = response;
-      pageCount = Math.ceil(postsList.count / 12);
-      postsList.posts.forEach((post) => {
-          post.content = post.content.slice(0, 100) + '...';
-        });
-      return templates.get('posts-list');
-    })
-    .then((template) => {
-      $(app.contentContainer).html(template(postsList));
-      return templates.get('pagination');
-    })
-    .then((template) => {
-      $(app.paginationContainer).html(template({
-        pageCount,
-        category,
-      }));
-      app.router.updatePageLinks();
-    });
+  postsData.getByCategory(postsCategory, type, page)
+    .then(fetchPostsData)
+    .then(renderPostsList)
+    .then(renderPagination);
 };
 
 const getCategories = () => {

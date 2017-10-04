@@ -4,8 +4,8 @@
 }
 
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 a {
@@ -13,14 +13,14 @@ a {
 }
 
 body {
-  font-family: 'LGothic';
-  font-size: 1.5em;
-  font-weight: normal;
-  text-transform: uppercase;
   background: #1d1d1d; /* Old browsers */
   background: -moz-linear-gradient(left, #1d1d1d 0%, #323232 31%, #323232 73%, #1d1d1d 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(left, #1d1d1d 0%,#323232 31%,#323232 73%,#1d1d1d 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #1d1d1d 0%,#323232 31%,#323232 73%,#1d1d1d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  font-family: 'LGothic';
+  font-size: 1.5em;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 a {
@@ -31,9 +31,12 @@ ul {
   list-style: none;
 }
 
-#wrapper {
+.wrapper-upper {
+  padding: 100px 50px;
 }
 
-#wrapper-upper {
-  padding: 100px 50px;
+.loading {
+  color: white;
+  letter-spacing: 0.1em;
+  text-align: center;
 }

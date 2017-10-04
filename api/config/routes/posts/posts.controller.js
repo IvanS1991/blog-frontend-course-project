@@ -51,7 +51,6 @@ const controller = (data) => {
     }
 
     const page = parseInt(req.params.page, 10);
-    console.log('here');
 
     data.posts.getAll(filter, page)
       .then((result) => {

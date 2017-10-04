@@ -1,13 +1,9 @@
-#logo img {
+.logo img {
   width: 15em;
 }
 
-#logo, .nav {
-  padding: 0% 1%;
-}
-
-.nav {
-
+.logo, .nav {
+  padding: 0 1%;
 }
 
   .nav-item {
@@ -29,10 +25,6 @@
 .dropdown {
   position: relative;
 }
-
-  .dropdown-trigger {
-
-  }
 
   .dropdown-container {
     position: absolute;
@@ -57,8 +49,8 @@
 
     .dropdown-items,
     .trigger-link {
-      padding: 0.3em;
       border-radius: 0.2em;
+      padding: 0.3em;
     }
 
 .form-group {
@@ -81,21 +73,13 @@
     }
     
     .form-button {
-      position: absolute;
-      top: -0.75em;
-      right: 0.25em;
-      width: 20px;
-      height: 20px;
       background-image: url('../icons/search-icon.png');
+      height: 20px;
+      position: absolute;
+      right: 0.25em;
+      top: -0.75em;
+      width: 20px;
     }
-
-.focused {
-  color: #dcc08e;
-}
-    
-.category:hover {
-  color: #dcc08e;
-}
 
 .user-nav {
   display: flex;

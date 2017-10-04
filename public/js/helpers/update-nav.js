@@ -9,8 +9,8 @@ const update = () => {
   const containerId = '#nav-main';
   let categoriesList;
   const username = localStorage.getItem('username');
-  $('#loading').removeClass('hidden');
-  $('#wrapper').addClass('hidden');
+  $('.loading').removeClass('hidden');
+  $('.wrapper').addClass('hidden');
   return postsController.getCategories()
     .then((categories) => {
       categoriesList = categories;
@@ -28,8 +28,8 @@ const update = () => {
 };
 
 const hideLoadingScreen = () => {
-  $('#loading').addClass('hidden');
-  $('#wrapper').removeClass('hidden');
+  $('.loading').addClass('hidden');
+  $('.wrapper').removeClass('hidden');
 };
 
 export { update, hideLoadingScreen };
