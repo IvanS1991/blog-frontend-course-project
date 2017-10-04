@@ -97,7 +97,10 @@
   color: #dcc08e;
 }
 
-
+.user-nav {
+  display: flex;
+  justify-content: space-around;
+}
 
 
 

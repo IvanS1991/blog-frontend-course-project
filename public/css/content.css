@@ -62,6 +62,7 @@
       font-size: 0.65em;
       text-transform: none;
       border-top: 1px dotted gray;
+      height: 75px;
       background-image: url('../icons/fancy-border.png');
       background-position: bottom left;
       background-repeat: repeat-x;

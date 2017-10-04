@@ -41,19 +41,19 @@
               Create new post...
             </li>
             <li class="dropdown-item">
-              <form>
+              <form class="user-nav">
                 <input class="user-input" type="text" id="tb-post-title" placeholder="Title"/>
                 <textarea class="user-input" id="tb-post-content" placeholder="Content"></textarea>
                 <input class="user-input" id="tb-post-category" placeholder="Category"/>
                 <input class="user-input" id="tb-post-subCategory" placeholder="Sub-category"/>
-                <input class="user-input" type="button" id="btn-post-create" value="Submit"/>
+                <a class="user-input nav-link" id="btn-post-create">Submit</a>
               </form>
             </li>
             <li class="dropdown-item">
               <hr/>
             </li>
             <li class="dropdown-item">
-              <input class="user-input" type="button" id="btn-logout" value="Logout"/>
+              <a class="user-input nav-link" id="btn-logout">Logout</a>
             </li>
           </ul>
         </li>
@@ -71,8 +71,10 @@
               <form>
                 <input class="user-input" type="text" id="tb-username" placeholder="Username"/>
                 <input class="user-input" type="password" id="tb-password" placeholder="Password"/>
-                <input class="user-input" type="button" id="btn-login" value="Sign in"/>
-                <input class="user-input" type="button" id="btn-register" value="Sign up"/>
+                <div class="user-nav">
+                  <a class="user-input nav-link"id="btn-login">Sign in</a>
+                  <a class="user-input nav-link" id="btn-register">Sign up</a>
+                </div>
               </form>
             </li>
           </ul>
