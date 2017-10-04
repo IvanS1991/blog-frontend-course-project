@@ -51,14 +51,15 @@ const controller = (data) => {
     }
 
     const page = parseInt(req.params.page, 10);
+    console.log('here');
 
     data.posts.getAll(filter, page)
-      .then((posts) => {
+      .then((result) => {
         res.status(200)
           .json({
-            count: posts.length,
-            category: filter.subCategory,
-            posts,
+            count: result.count,
+            category: category || 'all',
+            posts: result.posts,
           });
       })
       .catch((err) => {

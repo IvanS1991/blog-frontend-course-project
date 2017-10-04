@@ -1,0 +1,27 @@
+<div class="page-previous">
+  {{#if this.allPosts}}
+  <a href="/category/all/1" data-navigo><<</a>
+  {{else}}
+  <a href="/category/sub/{{this.category}}/1" data-navigo><<</a>
+  {{/if}}
+</div>
+<ul class="pages">
+  {{#with this}}
+  {{#for 1 this.pageCount 1 this.allPosts this.category}}
+  <li class="page-link">
+    {{#if allPosts}}
+      <a href="/category/all/{{this.i}}" data-navigo>{{this.i}}</a>
+    {{else}}
+      <a href="/category/sub/{{category}}/{{this.i}}" data-navigo>{{this.i}}</a>
+    {{/if}}
+  </li>
+  {{/for}}
+  {{/with}}
+</ul>
+<div class="page-next">
+  {{#if this.allPosts}}
+  <a href="/category/all/{{this.pageCount}}" data-navigo>>></a>
+  {{else}}
+  <a href="/category/sub/{{this.category}}/{{this.pageCount}}" data-navigo>>></a>
+  {{/if}}
+</div>

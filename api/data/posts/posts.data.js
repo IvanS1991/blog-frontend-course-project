@@ -42,7 +42,10 @@ const postsData = (db) => {
           if (!matches.length) {
             return reject(new Error(`There are no posts in this category!`));
           }
-          return resolve(matches.slice(startIndex, endIndex));
+          return resolve({
+            count: matches.length,
+            posts: matches.slice(startIndex, endIndex),
+          });
         });
     });
   };

@@ -21,6 +21,7 @@ System.config({
       'data': 'js/data/data.js',
       'update-nav': 'js/helpers/update-nav.js',
       'widgets': 'js/helpers/widgets.js',
+      'handlebars-helpers': 'js/helpers/handlebars-helpers.js',
 
       // APP CONTROLLERS
       'home-controller': 'js/app/routes/controllers/home.controller.js',

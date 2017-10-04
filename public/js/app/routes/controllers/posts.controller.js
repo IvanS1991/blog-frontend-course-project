@@ -28,11 +28,18 @@ const createPost = () => {
     .catch(error.handle);
 };
 
-const getAll = () => {
+const getAll = (params) => {
+  params = params || {};
+  const page = params.page || 1;
+  const allPosts = true;
   let postsList;
-  postsData.getByCategory(null, 'all', 1)
+  let pageCount;
+  let category;
+  postsData.getByCategory(null, 'all', page)
     .then((response) => {
       postsList = response;
+      pageCount = Math.ceil(postsList.count / 12);
+      category = postsList.category;
       postsList.posts.forEach((post) => {
           post.content = post.content.slice(0, 100) + '...';
         });
@@ -40,6 +47,14 @@ const getAll = () => {
     })
     .then((template) => {
       $(app.contentContainer).html(template(postsList));
+      return templates.get('pagination');
+    })
+    .then((template) => {
+      $(app.paginationContainer).html(template({
+        pageCount,
+        category,
+        allPosts,
+      }));
       app.router.updatePageLinks();
     });
 };
@@ -62,9 +77,11 @@ const getByCategory = (params) => {
   const type = params.type;
   const page = params.page;
   let postsList;
+  let pageCount;
   postsData.getByCategory(category, type, page)
     .then((response) => {
       postsList = response;
+      pageCount = Math.ceil(postsList.count / 12);
       postsList.posts.forEach((post) => {
           post.content = post.content.slice(0, 100) + '...';
         });
@@ -72,6 +89,13 @@ const getByCategory = (params) => {
     })
     .then((template) => {
       $(app.contentContainer).html(template(postsList));
+      return templates.get('pagination');
+    })
+    .then((template) => {
+      $(app.paginationContainer).html(template({
+        pageCount,
+        category,
+      }));
       app.router.updatePageLinks();
     });
 };
