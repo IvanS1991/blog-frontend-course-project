@@ -1,6 +1,6 @@
 <ul class="nav nav-left">
   <li class="nav-item"><a href="/home" class="nav-link focused" data-navigo>Home</a></li>
-  {{#each this}}
+  {{#each this.categoriesList}}
   <li class="nav-item">
     <ul class="dropdown">
       <li class="dropdown-trigger">
@@ -33,24 +33,31 @@
     <li class="nav-item">
       <ul class="dropdown">
         <li class="dropdown-trigger">
-          <a class="trigger-link">New post</a>
+          <a class="trigger-link">Logged in as {{this.username}}</a>
         </li>
         <li class="dropdown-container hidden">
           <ul class="dropdown-items">
             <li class="dropdown-item">
+              Create new post...
+            </li>
+            <li class="dropdown-item">
               <form>
-                <input class="user-input" type="text" placeholder="Username"/>
-                <input class="user-input" type="password" placeholder="Password"/>
-                <button class="user-input">Sign in</button>
-                <button class="user-input">Sign up</button>
+                <input class="user-input" type="text" id="tb-post-title" placeholder="Title"/>
+                <textarea class="user-input" id="tb-post-content" placeholder="Content"></textarea>
+                <input class="user-input" id="tb-post-category" placeholder="Category"/>
+                <input class="user-input" id="tb-post-subCategory" placeholder="Sub-category"/>
+                <input class="user-input" type="button" id="btn-post-create" value="Submit"/>
               </form>
+            </li>
+            <li class="dropdown-item">
+              <hr/>
+            </li>
+            <li class="dropdown-item">
+              <input class="user-input" type="button" id="btn-logout" value="Logout"/>
             </li>
           </ul>
         </li>
       </ul>
-    </li>
-    <li class="nav-item">
-      Logout
     </li>
   {{else}}
     <li class="nav-item">

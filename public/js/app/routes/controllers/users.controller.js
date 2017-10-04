@@ -2,6 +2,7 @@
 import { router } from 'app';
 import { usersData } from 'data';
 import * as error from 'error';
+import * as nav from 'update-nav';
 
 const writeToLocalStorage = (userData) => {
   toastr.success('Success!');
@@ -17,6 +18,8 @@ const register = () => {
 
   return usersData.post(userData)
     .then(writeToLocalStorage)
+    .then(nav.update)
+    .then(nav.hideLoadingScreen)
     .catch(error.handle);
 };
 
@@ -27,12 +30,21 @@ const login = () => {
   };
 
   return usersData.put(userData)
-    .then(writeToLocalStorage);
+    .then(writeToLocalStorage)
+    .then(nav.update)
+    .then(nav.hideLoadingScreen)
+    .catch(error.handle);
 };
 
 const logout = () => {
-  localStorage.clear();
-  toastr.success('Success!');
+  return Promise.resolve()
+    .then(() => {
+      toastr.success('Success!');
+      return localStorage.clear();
+    })
+    .then(nav.update)
+    .then(nav.hideLoadingScreen)
+    .catch(error.handle);
 };
 
 export {

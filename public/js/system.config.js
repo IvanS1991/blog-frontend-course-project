@@ -19,8 +19,7 @@ System.config({
       'error': 'js/helpers/error.js',
       'routes': 'js/app/routes/routes.js',
       'data': 'js/data/data.js',
-      'update-categories': 'js/helpers/update-categories.js',
-      'check-logged-in': 'js/helpers/check-logged-in.js',
+      'update-nav': 'js/helpers/update-nav.js',
       'widgets': 'js/helpers/widgets.js',
 
       // APP CONTROLLERS

@@ -19,9 +19,6 @@ const controller = (data) => {
           });
         return data.posts.createCategory(category);
       })
-      .then((result) => {
-        console.log(result);
-      })
       .catch((err) => {
         next(err);
       });

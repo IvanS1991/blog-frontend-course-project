@@ -57,6 +57,9 @@ const usersData = (db) => {
         passHash: passHash,
       }, (err, match) => {
         if (err) {
+          return reject(err);
+        }
+        if (!match) {
           return reject(new Error('Wrong username or password!'));
         }
         return resolve({

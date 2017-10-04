@@ -33,8 +33,6 @@ const postsData = (db) => {
     const startIndex = (page - 1) * size;
     const endIndex = page * size;
 
-    console.log(filter);
-
     return new Promise((resolve, reject) => {
       postsDb.find(filter)
         .toArray((err, matches) => {

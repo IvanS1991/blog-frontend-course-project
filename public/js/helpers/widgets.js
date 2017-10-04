@@ -1,6 +1,7 @@
 /* globals $ */
 
 import * as usersController from 'users-controller';
+import * as postsController from 'posts-controller';
 
 const dropDown = () => {
   const triggerSelector = '.trigger-link';
@@ -27,12 +28,19 @@ const userNav = () => {
   const userNavSelector = '.user-nav';
   const btnLogin = 'btn-login';
   const btnRegister = 'btn-register';
+  const btnLogout = 'btn-logout';
+  const btnCreatePost = 'btn-post-create';
   $(userNavSelector).on('click', (event) => {
     const $this = $(event.target);
-    if ($this.attr('id') === btnLogin) {
+    const $id = $this.attr('id');
+    if ($id === btnLogin) {
       usersController.login();
-    } else if ($this.attr('id') === btnRegister) {
+    } else if ($id === btnRegister) {
       usersController.register();
+    } else if ($id === btnLogout) {
+      usersController.logout();
+    } else if ($id === btnCreatePost) {
+      postsController.createPost();
     }
   });
 };

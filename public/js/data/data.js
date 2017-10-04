@@ -1,7 +1,9 @@
 import * as requester from 'requester';
 
-const headers = {
-  'X-Auth-Key': localStorage.getItem('authKey'),
+const getHeaders = () => {
+  return {
+    'X-Auth-Key': localStorage.getItem('authKey'),
+  };
 };
 
 class Data {
@@ -11,14 +13,14 @@ class Data {
 
   post(data) {
     return requester.postJson(this.baseUrl, {
-      headers,
+      headers: getHeaders(),
       data,
     });
   }
 
   put(data) {
     return requester.putJson(this.baseUrl, {
-      headers,
+      headers: getHeaders(),
       data,
     });
   }

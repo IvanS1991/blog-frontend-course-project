@@ -2,7 +2,7 @@ const controller = (data) => {
   const register = (req, res, next) => {
     const username = req.body.username;
     const passHash = req.body.passHash;
-    const passHashRepeat = req.body.passHashRepeat;
+    const passHashRepeat = passHash;
 
     return data.users.register(username, passHash, passHashRepeat)
       .then((user) => {

@@ -3,8 +3,7 @@
 import Navigo from 'navigo';
 
 import * as routes from 'routes';
-import { updateCategories } from 'update-categories';
-import { checkLoggedIn } from 'check-logged-in';
+import * as nav from 'update-nav';
 
 const contentContainer = '#content';
 const loadingElement = '#loading';
@@ -19,14 +18,8 @@ const router = new Navigo(appRoot, useHash, hash);
 const init = () => {
   routes.attachTo(router);
 
-  checkLoggedIn();
-  window.addEventListener('hashchange', checkLoggedIn);
-
-  updateCategories()
-    .then(() => {
-      $('#loading').addClass('hidden');
-      $('#wrapper').removeClass('hidden');
-    });
+  nav.update()
+    .then(nav.hideLoadingScreen);
 };
 
 export {
