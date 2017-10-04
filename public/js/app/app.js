@@ -2,7 +2,6 @@
 
 import Navigo from 'navigo';
 
-import 'jquery';
 import * as routes from 'routes';
 import { updateCategories } from 'update-categories';
 import { checkLoggedIn } from 'check-logged-in';

@@ -3,13 +3,13 @@
   {{#each this}}
   <li class="nav-item">
     <ul class="dropdown">
-      <li class="dropdown-trigger selected">
-        <a href="/category/main/{{this.categoryName}}/1" class="nav-link" data-navigo><span class="category">{{this.categoryName}}</span></a>
+      <li class="dropdown-trigger">
+        <a class="trigger-link">{{this.categoryName}}</a>
       </li>
-      <li class="dropdown-container">
+      <li class="dropdown-container hidden">
         <ul class="dropdown-items">
         {{#each this.sub}}
-          <li class="dropdown-item"><a href="/category/sub/{{this}}/1" class="nav-link" data-navigo><sup>>></sup><span class="category">{{this}}</span></a></li>
+          <li class="dropdown-item"><a href="/category/sub/{{this}}/1" class="nav-link" data-navigo><sup>>></sup>{{this}}</a></li>
         {{/each}}
         </ul>
       </li>
@@ -27,4 +27,50 @@
       </div>
     </form>
   </li>
+</ul>
+<ul class="nav nav-right user-nav">
+  {{#if this.username}}
+    <li class="nav-item">
+      <ul class="dropdown">
+        <li class="dropdown-trigger">
+          <a class="trigger-link">New post</a>
+        </li>
+        <li class="dropdown-container hidden">
+          <ul class="dropdown-items">
+            <li class="dropdown-item">
+              <form>
+                <input class="user-input" type="text" placeholder="Username"/>
+                <input class="user-input" type="password" placeholder="Password"/>
+                <button class="user-input">Sign in</button>
+                <button class="user-input">Sign up</button>
+              </form>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      Logout
+    </li>
+  {{else}}
+    <li class="nav-item">
+      <ul class="dropdown">
+        <li class="dropdown-trigger">
+          <a class="trigger-link">Sign in/Sign up</a>
+        </li>
+        <li class="dropdown-container hidden">
+          <ul class="dropdown-items">
+            <li class="dropdown-item">
+              <form>
+                <input class="user-input" type="text" id="tb-username" placeholder="Username"/>
+                <input class="user-input" type="password" id="tb-password" placeholder="Password"/>
+                <input class="user-input" type="button" id="btn-login" value="Sign in"/>
+                <input class="user-input" type="button" id="btn-register" value="Sign up"/>
+              </form>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  {{/if}}
 </ul>

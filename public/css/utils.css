@@ -6,6 +6,7 @@
   clear: both;
 }
 
-.text-white {
-  color: white;
+.selected {
+  background-color: #222222;
+  color: #dcc08e !important;
 }

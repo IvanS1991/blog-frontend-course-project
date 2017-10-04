@@ -12,7 +12,7 @@ const jsonRequest = (url, method, options) => {
       method,
       contentType,
       headers,
-      data,
+      data: JSON.stringify(data),
       success: (response) => {
         resolve(response);
       },

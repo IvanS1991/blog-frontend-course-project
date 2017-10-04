@@ -15,6 +15,13 @@ class Data {
       data,
     });
   }
+
+  put(data) {
+    return requester.putJson(this.baseUrl, {
+      headers,
+      data,
+    });
+  }
 }
 
 class UsersData extends Data {

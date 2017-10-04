@@ -21,6 +21,7 @@ System.config({
       'data': 'js/data/data.js',
       'update-categories': 'js/helpers/update-categories.js',
       'check-logged-in': 'js/helpers/check-logged-in.js',
+      'widgets': 'js/helpers/widgets.js',
 
       // APP CONTROLLERS
       'home-controller': 'js/app/routes/controllers/home.controller.js',

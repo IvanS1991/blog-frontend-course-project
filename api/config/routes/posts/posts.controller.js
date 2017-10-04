@@ -60,6 +60,7 @@ const controller = (data) => {
         res.status(200)
           .json({
             count: posts.length,
+            category: filter.subCategory,
             posts,
           });
       })

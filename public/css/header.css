@@ -35,7 +35,6 @@
   }
 
   .dropdown-container {
-    display: none;
     position: absolute;
   }
 
@@ -43,8 +42,21 @@
       margin: 10px;
     }
 
-    .dropdown-items, .selected {
+    .dropdown-items {
       background-color: #222222;
+    }
+    
+    .trigger-link {
+      color: white;
+    }
+
+    .nav-link:hover,
+    .trigger-link:hover {
+      color: #dcc08e;
+    }
+
+    .dropdown-items,
+    .trigger-link {
       padding: 0.3em;
       border-radius: 0.2em;
     }

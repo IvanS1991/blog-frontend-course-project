@@ -3,6 +3,7 @@
 import * as postsController from 'posts-controller';
 import { templates } from 'templates';
 import * as app from 'app';
+import * as widgets from 'widgets';
 
 const updateCategories = () => {
   const containerId = '#nav-main';
@@ -14,6 +15,8 @@ const updateCategories = () => {
     })
     .then((template) => {
       $(containerId).html(template(categoriesList));
+      widgets.dropDown();
+      widgets.userNav();
       app.router.updatePageLinks();
     });
 };

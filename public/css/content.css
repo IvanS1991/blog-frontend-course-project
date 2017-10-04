@@ -2,6 +2,27 @@
   padding-top: 1em;
 }
 
+  .breadcrumbs {
+    height: 1em;
+    margin: 0 1%;
+    color: grey;
+    text-transform: none;
+    font-family: sans-serif;
+    font-size: 0.6em;
+  }
+
+    .breadcrumbs > li {
+      display: inline-block;
+    }
+
+      .breadcrumb-link > a {
+        color: grey;
+      }
+
+      .breadcrumb-link > span {
+        color: lightgrey;
+      }
+
   .post-container {
     background-color: white;
     float: left;

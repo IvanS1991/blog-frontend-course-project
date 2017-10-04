@@ -1,3 +1,10 @@
+<ul class="breadcrumbs">
+{{#if category}}
+  <li class="breadcrumb-link"><a href="/home" data-navigo>Home</a></li>
+  <li class="breadcrumb-separator">>></li>
+  <li class="breadcrumb-link"><span>{{category}}</span></li>
+{{/if}}
+</ul>
 {{#each this.posts}}
   <article class="post-container">
     <div class="post-categories-container">
