@@ -1,6 +1,17 @@
 .content {
+  min-height: 930px;
   padding-top: 1em;
 }
+
+  .posts-list-trimmed {
+    float: left;
+    width: 84%;
+  }
+
+    .posts-list-trimmed > .post-container {
+      margin: 0.8%;
+      width: 18.3%;
+    }
 
   .breadcrumbs {
     color: grey;
@@ -23,54 +34,87 @@
         color: lightgrey;
       }
 
-  .post-container {
-    background-color: white;
-    float: left;
-    margin: 0.65%;
-    width: 15.3%;
-  }
-
-    .post-categories-container {
-      padding: 0.15em;
+    .post-container {
+      background-color: white;
+      float: left;
+      margin: 0.67%;
+      width: 15.3%;
     }
 
-      .post-category {
-  
-        height: 200px;
+      .post-categories-container {
+        padding: 0.15em;
       }
 
-        .post-category-link {
-          background-color: #9a1d0d;
-          color: white;
-          float: right;
-          font-size: 0.8em;
-          padding: 0.1em 0.3em;
-          text-decoration: none;
+        .post-category {
+          height: 200px;
         }
 
-    .post-title-container {
-      font-size: 1.1em;
-    }
+          .post-category-link {
+            background-color: #9a1d0d;
+            color: white;
+            float: right;
+            font-size: 0.8em;
+            padding: 0.1em 0.3em;
+            text-decoration: none;
+          }
 
-      .post-title {
-        color: #9a1d0d;
-        font-size: 1.3em;
+      .post-title-container {
+        font-size: 1.1em;
       }
 
-    .post-content-container {
-      background-image: url('../icons/fancy-border.png');
-      background-position: bottom left;
-      background-repeat: repeat-x;
-      border-top: 1px dotted gray;
-      font-family: sans-serif;
-      font-size: 0.65em;
-      height: 75px;
-      text-transform: none;
+        .post-title {
+          color: #9a1d0d;
+          font-size: 1.3em;
+          overflow: hidden;
+        }
+
+      .post-content-container {
+        background-image: url('../icons/fancy-border.png');
+        background-position: bottom left;
+        background-repeat: repeat-x;
+        border-top: 1px dotted gray;
+        font-family: sans-serif;
+        font-size: 0.65em;
+        height: 75px;
+        text-transform: none;
+      }
+
+      .post-title-container,
+      .post-content-container {
+        padding: 20px;
+      }
+
+.side-widgets {
+  float: right;
+  margin-right: 0.8%;
+  margin-top: -0.1%;
+  min-height: 930px;
+  width: 14.9%;
+}
+
+  .side-widgets > .dummy-widget {
+    background-color: #e7e7e7;
+    background-image: url('../icons/fancy-border.png');
+    background-position: bottom left;
+    background-repeat: repeat-x;
+    padding: 0;
+    width: 100%;
+  }
+  
+    .side-widgets .widget-title,
+    .side-widgets ul {
+      color: #9a1d0d;
+      padding: 0.6em 0.2em 0 0.2em;
     }
 
-    .post-title-container,
-    .post-content-container {
-      padding: 20px;
+    .side-widgets ul {
+      border-top: 1px dotted grey;
+      padding-bottom: 0.6em;
+    }
+
+    .side-widgets li,
+    .side-widgets a {
+      color: grey;
     }
 
 .pagination {

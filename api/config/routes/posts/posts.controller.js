@@ -57,7 +57,8 @@ const controller = (data) => {
         res.status(200)
           .json({
             count: result.count,
-            category: category || 'all',
+            category: result.category || 'all',
+            subCategory: filter.subCategory || 'none',
             posts: result.posts,
           });
       })

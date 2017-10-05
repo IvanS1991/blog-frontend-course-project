@@ -1,12 +1,14 @@
 <ul class="breadcrumbs">
-  {{#if category}}
+  {{#if this.allPosts}} {{else}}
   <li class="breadcrumb-link"><a href="/home" data-navigo>Home</a></li>
   <li class="breadcrumb-separator">>></li>
-  <li class="breadcrumb-link"><span>{{category}}</span></li>
+  <li class="breadcrumb-link"><span>{{this.category}}</span></li>
+  <li class="breadcrumb-separator">>></li>
+  <li class="breadcrumb-link"><span>{{this.subCategory}}</span></li>
   {{/if}}
 </ul>
-<section>
-{{#each this.posts}}
+<section {{#if this.allPosts}}class="posts-list"{{else}}class="posts-list-trimmed"{{/if}}>
+  {{#each this.postsList.posts}}
   <article class="post-container">
     <div class="post-categories-container">
       <h2 class="post-category" class="post-category"><a href="/category/sub/{{subCategory}}/1" class="post-category-link" data-navigo>{{subCategory}}</a></h3>
@@ -19,5 +21,29 @@
       <p class="post-content">{{content}}</p>
     </div>
   </article>
-{{/each}}
+  {{/each}}
 </section>
+{{#if this.allPosts}} {{else}}
+<aside class="side-widgets">
+  <div class="dummy-widget">
+    <h3 class="widget-title">Recent comments</h3>
+    <ul>
+      <li><span class="arrow-right">>></span><a href="#" class="widget-link">>Lorem consectetur adipiscing elit.</a></li>
+      <li><span class="arrow-right">>></span><a href="#" class="widget-link">Lorem ipsum dolor sit adipiscing elit.</a></li>
+      <li><span class="arrow-right">>></span><a href="#" class="widget-link">Lorem consectetur adipiscing elit.</a></li>
+      <li><span class="arrow-right">>></span><a href="#" class="widget-link">Lorem ipsum dolor sit adipiscing elit.</a></li>
+      <li><span class="arrow-right">>></span><a href="#" class="widget-link">Lorem consectetur adipiscing elit.</a></li>
+    </ul>
+  </div>
+  <div class="dummy-widget">
+    <h3 class="widget-title">Recent posts</h3>
+    <ul>
+      <li><span class="arrow-right">>></span><a href="#" class="widget-link">>Lorem consectetur adipiscing elit.</a></li>
+      <li><span class="arrow-right">>></span><a href="#" class="widget-link">Lorem ipsum dolor sit adipiscing elit.</a></li>
+      <li><span class="arrow-right">>></span><a href="#" class="widget-link">Lorem consectetur adipiscing elit.</a></li>
+      <li><span class="arrow-right">>></span><a href="#" class="widget-link">Lorem ipsum dolor sit adipiscing elit.</a></li>
+      <li><span class="arrow-right">>></span><a href="#" class="widget-link">Lorem consectetur adipiscing elit.</a></li>
+    </ul>
+  </div>
+</aside>
+{{/if}}

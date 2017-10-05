@@ -45,6 +45,7 @@ const postsData = (db) => {
           return resolve({
             count: matches.length,
             posts: matches.slice(startIndex, endIndex),
+            category: matches[0].category,
           });
         });
     });

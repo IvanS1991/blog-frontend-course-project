@@ -9,11 +9,13 @@ let allPosts = false;
 let postsList;
 let pageCount;
 let category;
+let subCategory;
 
 const fetchPostsData = (response) => {
   postsList = response;
   pageCount = Math.ceil(postsList.count / 12);
   category = postsList.category;
+  subCategory = postsList.subCategory;
   postsList.posts.forEach((post) => {
       post.content = post.content.slice(0, 100) + '...';
     });
@@ -21,7 +23,12 @@ const fetchPostsData = (response) => {
 };
 
 const renderPostsList = (template) => {
-  $(app.contentContainer).html(template(postsList));
+  $(app.contentContainer).html(template({
+    allPosts,
+    category,
+    subCategory,
+    postsList,
+  }));
   return templates.get('pagination');
 };
 
@@ -31,6 +38,7 @@ const renderPagination = (template) => {
     category,
     allPosts,
   }));
+  allPosts = false;
   app.router.updatePageLinks();
 };
 
