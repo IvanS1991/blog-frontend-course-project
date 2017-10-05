@@ -1,9 +1,49 @@
-<h2>{{this.post.title}}</h2>
-<p>Posted by {{this.post.title}} in {{this.post.category}} >> {{this.post.subCategory}} | {{this.count.length}} comments</p>
-<p>{{this.post.content}}</p>
-<hr>
-{{#each this.post.comments}}
-  <h4>{{author}}</h4>
-  <p>{{content}}</p>
-  <hr>
-{{/each}}
+<section class="post-details-container">
+  <aside class="post-aside-container">
+    <div class="post-category-container">
+      <a class="category-link">{{this.post.subCategory}}</a>
+    </div>
+    <div class="post-widgets-container">
+      <div class="widget">
+        <h4 class="widget-header">Tags</h4>
+        <ul class="widget-body tags-list">
+          <li class="tag">TAG</li>
+          <li class="tag">TAGTAG</li>
+          <li class="tag">TAG</li>
+          <li class="tag">TAGTAG</li>
+          <li class="tag">TAGTAGTAG</li>
+        </ul>
+      </div>
+      <div class="widget">
+        <h4 class="widget-header">Related posts</h4>
+        <ul class="widget-body related-posts-list">
+          <li class="related-post"><span class="arrow">>></span> RELATED 1</li>
+          <li class="related-post"><span class="arrow">>></span> RELATED 1</li>
+          <li class="related-post"><span class="arrow">>></span> RELATED 1</li>
+        </ul>
+      </div>
+      <div class="widget">
+        <h4 class="widget-header">Share this</h4>
+        <ul class="widget-body share-links-list">
+          <li class="share-link">Link</li>
+          <li class="share-link">Link</li>
+          <li class="share-link">Link</li>
+          <li class="share-link">Link</li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+  <article class="post-contents-container">
+    <div class="post-contents-header">
+      <h1 class="post-title"><a class="post-title-link">{{this.post.title}}</a></h1>
+      <h2 class="post-meta">Posted by {{this.post.author}} in {{this.post.category}} >> {{this.post.subCategory}}</h2>
+    </div>
+    <div class="post-contents-body">
+      <p class="post-text">{{this.post.content}}</p>
+    </div>
+  </article>
+</section>
+<div class="post-details-container-border-bottom"></div>
+<section class="post-comments-container">
+  <h2>Comments</h2>
+</section>

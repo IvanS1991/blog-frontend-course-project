@@ -30,6 +30,16 @@ nav {
   position: relative;
 }
 
+  .dropdown-item input,
+  .dropdown-item textarea {
+    background-color: black;
+    border: 1px solid #9a1d0d;
+    box-sizing: border-box;
+    color: white;
+    font-size: 0.8em;
+    resize: none;
+  }
+
   .dropdown-container {
     position: absolute;
   }

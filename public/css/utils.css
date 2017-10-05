@@ -10,3 +10,8 @@
   background-color: #222222;
   color: #dcc08e !important;
 }
+
+.arrow {
+  font-size: 0.4em;
+  vertical-align: super;
+}
