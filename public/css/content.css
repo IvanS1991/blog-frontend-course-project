@@ -3,6 +3,12 @@
   padding-top: 1em;
 }
 
+  .posts-list,
+  .posts-list-trimmed {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .posts-list-trimmed {
     float: left;
     width: 84%;
@@ -36,7 +42,9 @@
 
     .post-container {
       background-color: white;
-      float: left;
+      background-image: url('../icons/fancy-border.png');
+      background-position: bottom left;
+      background-repeat: repeat-x;
       margin: 0.67%;
       width: 15.3%;
     }
@@ -60,22 +68,20 @@
 
       .post-title-container {
         font-size: 1.1em;
+        height: 3.5em;
       }
 
         .post-title {
           color: #9a1d0d;
+          display: inline-block;
           font-size: 1.3em;
           overflow: hidden;
         }
 
       .post-content-container {
-        background-image: url('../icons/fancy-border.png');
-        background-position: bottom left;
-        background-repeat: repeat-x;
         border-top: 1px dotted gray;
         font-family: sans-serif;
         font-size: 0.65em;
-        height: 75px;
         text-transform: none;
       }
 
