@@ -77,14 +77,15 @@ const getAll = (params) => {
 
 const getById = (params) => {
   const id = params.id;
-  let post;
+  let postData;
   postsData.getById(id)
     .then((response) => {
-      post = response;
+      response.post.content = response.post.content.split('\n');
+      postData = response;
       return templates.get('post-details');
     })
     .then((template) => {
-      $(app.contentContainer).html(template(post));
+      $(app.contentContainer).html(template(postData));
     });
 };
 
