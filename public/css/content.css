@@ -80,6 +80,7 @@
 
       .post-content-container {
         border-top: 1px dotted gray;
+        color: #7a7575;
         font-family: 'DroidSans';
         font-size: 0.65em;
         text-transform: none;
@@ -88,6 +89,15 @@
       .post-title-container,
       .post-content-container {
         padding: 20px;
+      }
+
+      .post-text-paragraph,
+      .comment-content {
+        color: #7a7575;
+        font-family: 'DroidSans';
+        font-size: 0.65em;
+        padding-top: 1em;
+        text-transform: none;
       }
 
 .side-widgets {
