@@ -41,6 +41,7 @@ const renderPagination = (template) => {
   }));
   allPosts = false;
   window.scrollTo(0, 0);
+  $('.pagination').removeClass('hidden');
   app.router.updatePageLinks();
 };
 

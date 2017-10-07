@@ -23,9 +23,9 @@ body {
   background: -webkit-linear-gradient(left, #1d1d1d 0%,#323232 31%,#323232 73%,#1d1d1d 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #1d1d1d 0%,#323232 31%,#323232 73%,#1d1d1d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   font-family: 'LGothic';
-  letter-spacing: 1px;
   font-size: 1.5em;
   font-weight: normal;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
@@ -61,6 +61,6 @@ ul {
 
 @media (max-width: 800px) {
   .wrapper-upper {
-    padding: 4em 0.5em 0.5 em 0.5 em;
+    padding: 2em 0.5em 0.5em 0.5em;
   }
 }

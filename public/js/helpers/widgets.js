@@ -3,7 +3,6 @@
 import * as usersController from 'users-controller';
 import * as postsController from 'posts-controller';
 import * as commentsController from 'comments-controller';
-import * as app from 'app';
 
 const classHidden = 'hidden';
 const classExpanded = 'expanded';
@@ -22,7 +21,8 @@ const dropDown = () => {
     const $trigger = $this.parents(classDropdownContainer).prev();
 
     $(classDropdownTrigger).removeClass(classSelected);
-    if ($this.hasClass(classTriggerLink.slice(1)) && !$this.hasClass(classHomeLink)) {
+    if ($this.hasClass(classTriggerLink.slice(1))
+      && !$this.hasClass(classHomeLink)) {
       $this.addClass(classSelected);
       $(classDropdownContainer).addClass(classHidden);
       $this.parent().next().toggleClass(classHidden);
@@ -77,8 +77,6 @@ const commentsNav = () => {
 };
 
 const collapsibleNav = () => {
-  const containerClass = '.nav-container';
-
   $(classNavExpand).on('click', () => {
     $(classNavContainer).toggleClass(classExpanded);
   });
