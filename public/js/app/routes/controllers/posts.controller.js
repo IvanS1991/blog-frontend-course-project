@@ -39,6 +39,7 @@ const renderPagination = (template) => {
     allPosts,
   }));
   allPosts = false;
+  window.scrollTo(0, 0);
   app.router.updatePageLinks();
 };
 

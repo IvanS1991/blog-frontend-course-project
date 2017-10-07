@@ -9,6 +9,7 @@ const classSelected = 'selected';
 const classTriggerLink = '.trigger-link';
 const classNavLink = '.nav-link';
 const classDropdownTrigger = '.trigger-link';
+const classHomeLink = 'home-link';
 const classDropdownContainer = '.dropdown-container';
 const classNavExpand = '.nav-expand';
 const classNavContainer = '.nav-container';
@@ -24,9 +25,8 @@ const dropDown = () => {
     };
 
     $(classDropdownTrigger).removeClass(classSelected);
-    if ($this.hasClass(classTriggerLink.slice(1))) {
+    if ($this.hasClass(classTriggerLink.slice(1)) && !$this.hasClass(classHomeLink)) {
       $this.addClass(classSelected);
-      console.log('here');
       toggleDropdown();
     }
     if ($this.hasClass(classNavLink.slice(1))) {
