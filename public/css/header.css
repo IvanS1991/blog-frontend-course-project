@@ -6,7 +6,7 @@ nav {
   display: none;
 }
 
-.logo img {
+.logo > img {
   width: 15em;
 }
 
@@ -105,6 +105,10 @@ nav {
 }
 
 @media (max-width: 800px) {
+  .logo > img {
+    width: 60%;
+  }
+
   .nav-item {
     display: block;
   }
@@ -152,15 +156,8 @@ nav {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 500px) {
+  .logo > img {
+    width: 100%;
+  }
+}

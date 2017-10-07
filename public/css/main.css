@@ -3,6 +3,11 @@
   src: url('../fonts/LeagueGothic-Regular.otf');
 }
 
+@font-face {
+  font-family: 'DroidSans';
+  src: url('../fonts/DroidSans.ttf');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -33,7 +38,7 @@ ul {
 }
 
 .wrapper-upper {
-  padding: 4em 1em;
+  padding: 4em 1em 2em 1em;
 }
 
 .loading {
@@ -44,18 +49,18 @@ ul {
 
 @media (max-width: 1500px) {
   .wrapper-upper {
-    padding: 2em 1em;
+    padding: 2em 1em 1em 1em;
   }
 }
 
 @media (max-width: 1000px) {
   .wrapper-upper {
-    padding: 2em 0.5em;
+    padding: 2em 0.5em 0.5em 0.5em;
   }
 }
 
 @media (max-width: 800px) {
   .wrapper-upper {
-    padding: 4em 0.5em;
+    padding: 4em 0.5em 0.5 em 0.5 em;
   }
 }

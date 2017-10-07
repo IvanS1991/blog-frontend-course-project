@@ -37,7 +37,7 @@
     <article class="post-contents-container">
       <div class="post-contents-header">
         <h1 class="post-title"><a class="post-title-link">{{this.post.title}}</a></h1>
-        <h2 class="post-meta">Posted by {{this.post.author}} in {{this.post.category}} >> {{this.post.subCategory}}</h2>
+        <h2 class="post-meta">Posted by {{this.post.author}} in {{this.post.category}} >> {{this.post.subCategory}} | {{this.commentCount}} comment(s)</h2>
       </div>
       <div class="post-contents-body">
         {{#each this.post.content}}
@@ -48,17 +48,46 @@
   </section>
   <div class="post-details-container-border-bottom"></div>
   <section class="post-comments-container">
-    <h2 class="post-comments-header">Comments</h2>
+    <h2 class="post-comments-header">{{this.commentCount}} Comment(s)</h2>
     <ul class="post-comments-body">
+      {{#each this.post.comments}}
       <li class="post-comment">
         <div class="comment-aside">
-          <p class="comment-created-at">Aug 13</p>
+          <p class="comment-created-at">{{created}}</p>
         </div>
         <div class="comment-main">
-          <h4 class="comment-author">Author</h4>
-          <p class="comment-content">Content</p>
+          <h4 class="comment-author">{{author}}</h4>
+          <p class="comment-content">{{content}}</p>
         </div>
       </li>
+      {{/each}}
     </ul>
+    <h2 class="post-comments-header">Leave a comment</h2>
+    <form id="comment-form" data-post-id={{this.post.id}}>
+      <textarea class="comment-input" id="tb-comment-content" required/>
+      <a class="comment-submit" id="btn-comment-create">Submit</a>
+    </form>
   </section>
 </section>
+<aside class="side-widgets side-widgets-post">
+  <div class="dummy-widget">
+    <h3 class="widget-title">Recent comments</h3>
+    <ul>
+      <li><a href="#" class="widget-link"><span class="arrow">>></span>Lorem consectetur adipiscing elit.</a></li>
+      <li><a href="#" class="widget-link"><span class="arrow">>></span>Lorem ipsum dolor sit adipiscing elit.</a></li>
+      <li><a href="#" class="widget-link"><span class="arrow">>></span>Lorem consectetur adipiscing elit.</a></li>
+      <li><a href="#" class="widget-link"><span class="arrow">>></span>Lorem ipsum dolor sit adipiscing elit.</a></li>
+      <li><a href="#" class="widget-link"><span class="arrow">>></span>Lorem consectetur adipiscing elit.</a></li>
+    </ul>
+  </div>
+  <div class="dummy-widget">
+    <h3 class="widget-title">Recent posts</h3>
+    <ul>
+      <li><a href="#" class="widget-link"><span class="arrow">>></span>Lorem consectetur adipiscing elit.</a></li>
+      <li><a href="#" class="widget-link"><span class="arrow">>></span>Lorem ipsum dolor sit adipiscing elit.</a></li>
+      <li><a href="#" class="widget-link"><span class="arrow">>></span>Lorem consectetur adipiscing elit.</a></li>
+      <li><a href="#" class="widget-link"><span class="arrow">>></span>Lorem ipsum dolor sit adipiscing elit.</a></li>
+      <li><a href="#" class="widget-link"><span class="arrow">>></span>Lorem consectetur adipiscing elit.</a></li>
+    </ul>
+  </div>
+</aside>

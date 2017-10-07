@@ -21,7 +21,7 @@
 
   .breadcrumbs {
     color: grey;
-    font-family: sans-serif;
+    font-family: 'DroidSans';
     font-size: 0.6em;
     height: 1em;
     margin: 0 1%;
@@ -80,7 +80,7 @@
 
       .post-content-container {
         border-top: 1px dotted gray;
-        font-family: sans-serif;
+        font-family: 'DroidSans';
         font-size: 0.65em;
         text-transform: none;
       }

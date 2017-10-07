@@ -1,7 +1,9 @@
-/* globals $ */
+/* globals $, toastr */
 
 import * as usersController from 'users-controller';
 import * as postsController from 'posts-controller';
+import * as commentsController from 'comments-controller';
+import * as app from 'app';
 
 const classHidden = 'hidden';
 const classExpanded = 'expanded';
@@ -19,19 +21,15 @@ const dropDown = () => {
     const $this = $(event.target);
     const $trigger = $this.parents(classDropdownContainer).prev();
 
-    const toggleDropdown = () => {
-      $(classDropdownContainer).addClass(classHidden);
-      $this.parent().next().toggleClass(classHidden);
-    };
-
     $(classDropdownTrigger).removeClass(classSelected);
     if ($this.hasClass(classTriggerLink.slice(1)) && !$this.hasClass(classHomeLink)) {
       $this.addClass(classSelected);
-      toggleDropdown();
+      $(classDropdownContainer).addClass(classHidden);
+      $this.parent().next().toggleClass(classHidden);
     }
     if ($this.hasClass(classNavLink.slice(1))) {
       $trigger.children('a').addClass(classSelected);
-      toggleDropdown();
+      $(classDropdownContainer).addClass(classHidden);
       $(classNavContainer).removeClass(classExpanded);
     }
   });
@@ -59,6 +57,25 @@ const userNav = () => {
   });
 };
 
+const commentsNav = () => {
+  $('#btn-comment-create').on('click', () => {
+    const commentData = {
+      postId: $('#comment-form').attr('data-post-id'),
+      content: $('#tb-comment-content').val(),
+    };
+    commentsController.createComment(commentData)
+      .then((response) => {
+        const params = {
+          id: response.postId,
+        };
+        postsController.getById(params);
+      })
+      .catch((err) => {
+        toastr.error(err);
+      });
+  });
+};
+
 const collapsibleNav = () => {
   const containerClass = '.nav-container';
 
@@ -67,4 +84,4 @@ const collapsibleNav = () => {
   });
 };
 
-export { dropDown, collapsibleNav, userNav };
+export { dropDown, collapsibleNav, userNav, commentsNav };

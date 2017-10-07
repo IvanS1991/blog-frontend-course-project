@@ -4,6 +4,7 @@ import { postsData } from 'data';
 import { templates } from 'templates';
 import * as error from 'error';
 import * as nav from 'update-nav';
+import * as widgets from 'widgets';
 
 let allPosts = false;
 let postsList;
@@ -78,15 +79,20 @@ const getAll = (params) => {
 
 const getById = (params) => {
   const id = params.id;
-  let postData;
+  const postData = {};
   postsData.getById(id)
     .then((response) => {
+      console.log(response);
       response.post.content = response.post.content.split('\n');
-      postData = response;
+      postData.post = response.post;
+      postData.commentCount = response.post.comments.length;
       return templates.get('post-details');
     })
     .then((template) => {
       $(app.contentContainer).html(template(postData));
+      $(app.paginationContainer).addClass('hidden');
+      widgets.commentsNav();
+      app.router.updatePageLinks();
     });
 };
 

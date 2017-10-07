@@ -24,7 +24,6 @@ System.config({
       'handlebars-helpers': 'js/helpers/handlebars-helpers.js',
 
       // APP CONTROLLERS
-      'home-controller': 'js/app/routes/controllers/home.controller.js',
       'users-controller': 'js/app/routes/controllers/users.controller.js',
       'posts-controller': 'js/app/routes/controllers/posts.controller.js',
       'comments-controller': 'js/app/routes/controllers/comments.controller.js',

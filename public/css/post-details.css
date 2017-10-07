@@ -1,6 +1,7 @@
 .post-details-main {
-  position: absolute;
-  left: -0.2em;
+  float: left;
+  margin-left: -1em;
+  width: 80%;
 }
 
 .post-details-container {
@@ -10,6 +11,10 @@
   background-repeat: repeat-x;
   display: flex;
 }
+
+  .post-title-link {
+    font-size: 1.5em;
+  }
 
   .post-details-container-border-bottom {
     background-color: white;
@@ -74,14 +79,15 @@
 .post-comments-container {
   background-color: white;
   float: right;
-  margin: 1% 0 0 0;
-  padding: 1em;
+  margin: 1% 0 1% 0;
+  padding: 0.5em 1em 1em 1em;
   width: 85%;
 }
 
   .post-comments-header {
     border-bottom: 1px dotted grey;
-    padding-bottom: 0.5em;
+    color: #9a1d0d;
+    padding: 0.5em 0 0.5em 0;
   }
 
   .post-comments-body {
@@ -89,23 +95,50 @@
   }
 
     .post-comment {
+      border-bottom: 1px dotted grey;
       display: flex;
-      padding: 1em 0;
+      padding: 1em 0em;
     }
 
       .comment-aside {
         background-image: url('../img/avatar-comment.png');
         height: 63px;
         width: 63px;
+        text-align: right;
       }
 
         .comment-created-at {
           color: white;
           display: inline-block;
-          font-size: 1.45em;
-          float: right;
+          height: 60px;
+          font-size: 1.30em;
+          width: 60px;
         }
 
       .comment-main {
         padding: 0 0 1em 1em;
       }
+
+.side-widgets.side-widgets-post {
+  float: left;
+  margin: -0.68em 0 1em 1em;
+  width: 19%;
+}
+
+.comment-input {
+  background-color: #e7e7e7;
+  border: none;
+  display: block;
+  margin: 1% 0;
+}
+
+textarea.comment-input {
+  height: 100px;
+  resize: none;
+  width: 50%;
+}
+
+.comment-submit {
+  background-color: #e7e7e7;
+  color: #6e6e6e;
+}
