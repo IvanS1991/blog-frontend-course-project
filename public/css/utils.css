@@ -2,6 +2,10 @@
   display: none;
 }
 
+.expanded {
+  display: block;
+}
+
 .clearfix {
   clear: both;
 }

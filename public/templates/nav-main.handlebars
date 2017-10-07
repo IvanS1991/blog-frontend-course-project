@@ -1,86 +1,89 @@
-<ul class="nav-left">
-  <li class="nav-item"><a href="/home" class="nav-link selected" data-navigo>Home</a></li>
-  {{#each this.categoriesList}}
-  <li class="nav-item">
-    <ul class="dropdown">
-      <li class="dropdown-trigger">
-        <a class="trigger-link">{{this.categoryName}}</a>
-      </li>
-      <li class="dropdown-container hidden">
-        <ul class="dropdown-items">
-          {{#each this.sub}}
-          <li class="dropdown-item"><a href="/category/sub/{{this}}/1" class="nav-link" data-navigo><span class="arrow">>></span>{{this}}</a></li>
-          {{/each}}
-        </ul>
-      </li>
-    </ul>
-  </li>
-  {{/each}}
-</ul>
-<ul class="nav-right">
-  <li>
-    <form class="form-group">
-      <div class="form-control">
-        <input class="form-textbox" type="text" placeholder="Search this website...">
-      </div>
-      <div class="form-control">
-        <button class="form-button"></button>
-      </div>
-    </form>
-  </li>
-</ul>
-<ul class="nav-right user-nav">
-  {{#if this.username}}
-  <li class="nav-item">
-    <ul class="dropdown">
-      <li class="dropdown-trigger">
-        <a class="trigger-link">Logged in as {{this.username}}</a>
-      </li>
-      <li class="dropdown-container hidden">
-        <ul class="dropdown-items">
-          <li class="dropdown-item">
-            <a class="nav-link">New post...</a>
-          </li>
-          <li class="dropdown-item">
-            <form>
-              <input class="user-input" type="text" id="tb-post-title" placeholder="Title" />
-              <textarea class="user-input" id="tb-post-content" placeholder="Content"></textarea>
-              <input class="user-input" id="tb-post-category" placeholder="Category" />
-              <input class="user-input" id="tb-post-subCategory" placeholder="Sub-category" />
-              <a class="user-input nav-link" id="btn-post-create">Submit</a>
-            </form>
-          </li>
-          <li class="dropdown-item">
-            <hr/>
-          </li>
-          <li class="dropdown-item">
-            <a class="user-input nav-link" id="btn-logout">Logout</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  {{else}}
-  <li class="nav-item">
-    <ul class="dropdown">
-      <li class="dropdown-trigger">
-        <a class="trigger-link">Sign in/Sign up</a>
-      </li>
-      <li class="dropdown-container hidden">
-        <ul class="dropdown-items">
-          <li class="dropdown-item">
-            <form>
-              <input class="user-input" type="text" id="tb-username" placeholder="Username" required/>
-              <input class="user-input" type="password" id="tb-password" placeholder="Password" required/>
-              <div class="user-nav">
-                <a class="user-input nav-link" id="btn-login">Sign in</a>
-                <a class="user-input nav-link" id="btn-register">Sign up</a>
-              </div>
-            </form>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  {{/if}}
-</ul>
+<a class="trigger-link nav-expand">Show navigation</a>
+<div class="nav-container">
+  <ul class="nav-left">
+    <li class="nav-item"><a href="/home" class="nav-link selected" data-navigo>Home</a></li>
+    {{#each this.categoriesList}}
+    <li class="nav-item">
+      <ul class="dropdown">
+        <li class="dropdown-trigger">
+          <a class="trigger-link">{{this.categoryName}}</a>
+        </li>
+        <li class="dropdown-container hidden">
+          <ul class="dropdown-items">
+            {{#each this.sub}}
+            <li class="dropdown-item"><a href="/category/sub/{{this}}/1" class="nav-link" data-navigo><span class="arrow">>></span>{{this}}</a></li>
+            {{/each}}
+          </ul>
+        </li>
+      </ul>
+    </li>
+    {{/each}}
+  </ul>
+  <ul class="nav-right">
+    <li>
+      <form class="form-group">
+        <div class="form-control">
+          <input class="form-textbox" type="text" placeholder="Search this website...">
+        </div>
+        <div class="form-control">
+          <button class="form-button"></button>
+        </div>
+      </form>
+    </li>
+  </ul>
+  <ul class="nav-right user-nav">
+    {{#if this.username}}
+    <li class="nav-item">
+      <ul class="dropdown">
+        <li class="dropdown-trigger">
+          <a class="trigger-link">Logged in as {{this.username}}</a>
+        </li>
+        <li class="dropdown-container hidden">
+          <ul class="dropdown-items">
+            <li class="dropdown-item">
+              <a class="nav-link">New post...</a>
+            </li>
+            <li class="dropdown-item">
+              <form>
+                <input class="user-input" type="text" id="tb-post-title" placeholder="Title" />
+                <textarea class="user-input" id="tb-post-content" placeholder="Content"></textarea>
+                <input class="user-input" id="tb-post-category" placeholder="Category" />
+                <input class="user-input" id="tb-post-subCategory" placeholder="Sub-category" />
+                <a class="user-input nav-link" id="btn-post-create">Submit</a>
+              </form>
+            </li>
+            <li class="dropdown-item">
+              <hr/>
+            </li>
+            <li class="dropdown-item">
+              <a class="user-input nav-link" id="btn-logout">Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    {{else}}
+    <li class="nav-item">
+      <ul class="dropdown">
+        <li class="dropdown-trigger">
+          <a class="trigger-link">Sign in/Sign up</a>
+        </li>
+        <li class="dropdown-container hidden">
+          <ul class="dropdown-items">
+            <li class="dropdown-item">
+              <form>
+                <input class="user-input" type="text" id="tb-username" placeholder="Username" required/>
+                <input class="user-input" type="password" id="tb-password" placeholder="Password" required/>
+                <div class="user-nav">
+                  <a class="user-input nav-link" id="btn-login">Sign in</a>
+                  <a class="user-input nav-link" id="btn-register">Sign up</a>
+                </div>
+              </form>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    {{/if}}
+  </ul>
+</div>

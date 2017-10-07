@@ -156,31 +156,48 @@
     margin: 1%;
     width: 18%;
   }
+
+  .posts-list-trimmed > .post-container {
+    margin: 0.8%;
+    width: 23.3%;
+  }
 }
 
 @media (max-width: 1400px) {
-  .post-container {
+  .post-container,
+  .posts-list-trimmed > .post-container {
     margin: 1%;
     width: 23%;
+  }
+
+  .side-widgets {
+    display: none;
+  }
+
+  .posts-list-trimmed {
+    width: 100%;
   }
 }
 
 @media (max-width: 1200px) {
-  .post-container {
+  .post-container,
+  .posts-list-trimmed > .post-container {
     margin: 1%;
     width: 31.2%;
   }
 }
 
 @media (max-width: 1000px) {
-  .post-container {
+  .post-container,
+  .posts-list-trimmed > .post-container {
     margin: 1%;
     width: 48%;
   }
 }
 
 @media (max-width: 600px) {
-  .post-container {
+  .post-container,
+  .posts-list-trimmed > .post-container {
     margin: 1%;
     width: 98%;
   }

@@ -3,23 +3,36 @@
 import * as usersController from 'users-controller';
 import * as postsController from 'posts-controller';
 
-const dropDown = () => {
-  const triggerSelector = '.trigger-link';
-  const containerSelector = '.dropdown-container';
-  const classSelected = 'selected';
-  const classHidden = 'hidden';
+const classHidden = 'hidden';
+const classExpanded = 'expanded';
+const classSelected = 'selected';
+const classTriggerLink = '.trigger-link';
+const classNavLink = '.nav-link';
+const classDropdownTrigger = '.trigger-link';
+const classDropdownContainer = '.dropdown-container';
+const classNavExpand = '.nav-expand';
+const classNavContainer = '.nav-container';
 
+const dropDown = () => {
   $(document.body).on('click', (event) => {
     const $this = $(event.target);
-    const $trigger = $this.parents(containerSelector).prev();
-    $(triggerSelector).removeClass(classSelected);
-    if ($this.hasClass('trigger-link')) {
+    const $trigger = $this.parents(classDropdownContainer).prev();
+
+    const toggleDropdown = () => {
+      $(classDropdownContainer).addClass(classHidden);
+      $this.parent().next().toggleClass(classHidden);
+    };
+
+    $(classDropdownTrigger).removeClass(classSelected);
+    if ($this.hasClass(classTriggerLink.slice(1))) {
       $this.addClass(classSelected);
+      console.log('here');
+      toggleDropdown();
     }
-    if ($this.hasClass('nav-link') || !$this.hasClass('user-input')) {
+    if ($this.hasClass(classNavLink.slice(1))) {
       $trigger.children('a').addClass(classSelected);
-      $(containerSelector).addClass(classHidden);
-      $this.parent().next().removeClass(classHidden);
+      toggleDropdown();
+      $(classNavContainer).removeClass(classExpanded);
     }
   });
 };
@@ -30,6 +43,7 @@ const userNav = () => {
   const btnRegister = 'btn-register';
   const btnLogout = 'btn-logout';
   const btnCreatePost = 'btn-post-create';
+
   $(userNavSelector).on('click', (event) => {
     const $this = $(event.target);
     const $id = $this.attr('id');
@@ -45,8 +59,12 @@ const userNav = () => {
   });
 };
 
-const tabList = (selector) => {
+const collapsibleNav = () => {
+  const containerClass = '.nav-container';
 
+  $(classNavExpand).on('click', () => {
+    $(classNavContainer).toggleClass(classExpanded);
+  });
 };
 
-export { dropDown, tabList, userNav };
+export { dropDown, collapsibleNav, userNav };

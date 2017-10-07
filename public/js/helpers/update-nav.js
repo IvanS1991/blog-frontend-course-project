@@ -23,6 +23,7 @@ const update = () => {
       }));
       widgets.dropDown();
       widgets.userNav();
+      widgets.collapsibleNav();
       app.router.updatePageLinks();
     });
 };

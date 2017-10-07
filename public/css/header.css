@@ -2,6 +2,10 @@ nav {
   padding: 0.5em;
 }
 
+.nav-expand {
+  display: none;
+}
+
 .logo img {
   width: 15em;
 }
@@ -98,6 +102,54 @@ nav {
 .user-nav {
   display: flex;
   justify-content: space-around;
+}
+
+@media (max-width: 800px) {
+  .nav-item {
+    display: block;
+  }
+
+  .nav-link,
+  .trigger-link {
+    display: block;
+  }
+
+  .nav-right,
+  .nav-left {
+    float: none;
+  }
+
+  .nav-expand {
+    display: block;
+  }
+
+  .nav-container {
+    display: none;
+  }
+
+  nav {
+    padding: 0;
+  }
+
+  #nav-main {
+    background: #9a1d0d;
+    padding: 0.5em 1em;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 96%;
+  }
+
+  .dropdown-container {
+    position: relative;
+  }
+
+    .dropdown-items {
+      background-color: darkgrey;
+      border: 1px solid grey;
+      padding-left: 20%;
+      text-shadow: 1px 1px 1px black;
+    }
 }
 
 
