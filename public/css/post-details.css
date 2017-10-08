@@ -65,6 +65,10 @@
           color: #6e6e6e;
         }
 
+          .widget-link {
+            color: grey;
+          }
+
         .tags-list, .share-links-list {
           display: flex;
           flex-wrap: wrap;
