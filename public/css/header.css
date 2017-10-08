@@ -109,6 +109,15 @@ nav {
   justify-content: space-around;
 }
 
+  input.user-input {
+    width: 300px;
+  }
+
+  textarea.user-input {
+    height: 250px;
+    width: 300px;
+  }
+
 /* MEDIA QUERIES */
 @media (max-width: 800px) {
   nav {
@@ -147,7 +156,7 @@ nav {
     padding: 0 1em;
     position: fixed;
     top: 0;
-    width: 96%;
+    width: 100%;
   }
 
   .dropdown-container {
@@ -159,6 +168,10 @@ nav {
       border: 1px solid grey;
       padding-left: 20%;
       text-shadow: 1px 1px 1px black;
+    }
+
+    .dropdown-items.user-navigation {
+      padding: 2%;
     }
 }
 

@@ -27,6 +27,9 @@
   },
   "homepage": "https://github.com/IvanS1991/blog-frontend-course-project#readme",
   "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "eslint": "^4.8.0",
+    "eslint-config-google": "^0.9.1",
     "nodemon": "^1.12.1"
   },
   "dependencies": {

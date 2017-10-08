@@ -63,8 +63,12 @@ const commentsNav = () => {
       postId: $('#comment-form').attr('data-post-id'),
       content: $('#tb-comment-content').val(),
     };
-    commentsController.createComment(commentData)
+    if (!commentData.postId || !commentData.content) {
+      return toastr.error('Comment data cannot be empty!');
+    }
+    return commentsController.createComment(commentData)
       .then((response) => {
+        toastr.success('Successfuly created comment!');
         const params = {
           id: response.postId,
         };

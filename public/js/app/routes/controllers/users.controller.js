@@ -14,6 +14,9 @@ const register = () => {
     username: $('#tb-username').val(),
     passHash: $('#tb-password').val(),
   };
+  if (!userData.username || !userData.passHash) {
+    return toastr.error('User data cannot be empty!');
+  }
 
   return usersData.post(userData)
     .then(writeToLocalStorage)
@@ -27,6 +30,9 @@ const login = () => {
     username: $('#tb-username').val(),
     passHash: $('#tb-password').val(),
   };
+  if (!userData.username || !userData.passHash) {
+    return toastr.error('User data cannot be empty!');
+  }
 
   return usersData.put(userData)
     .then(writeToLocalStorage)

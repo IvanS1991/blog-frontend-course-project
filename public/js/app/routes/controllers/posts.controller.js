@@ -1,4 +1,4 @@
-/* globals $ */
+/* globals $, toastr */
 import * as app from 'app';
 import { postsData } from 'data';
 import { templates } from 'templates';
@@ -60,6 +60,12 @@ const createPost = () => {
     category: $('#tb-post-category').val(),
     subCategory: $('#tb-post-subCategory').val(),
   };
+  if (!postData.title
+    || !postData.content
+    || !postData.category
+    || !postData.subCategory) {
+    return toastr.error('Post data cannot be empty!');
+  }
 
   let postId;
 
@@ -70,6 +76,7 @@ const createPost = () => {
     .then(nav.update)
     .then(nav.hideLoadingScreen)
     .then(() => {
+      toastr.success('Successfuly created post!');
       const postUrl = `/posts/${postId}`;
       app.router.navigate(postUrl);
     })
