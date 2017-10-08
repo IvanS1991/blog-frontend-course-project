@@ -2,6 +2,7 @@
 import Handlebars from 'handlebars';
 
 const templates = (() => {
+  // Attempts to cache templates for further use
   const cache = {};
 
   const get = (name) => {

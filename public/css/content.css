@@ -1,24 +1,10 @@
+/* MAIN CONTAINER */
 .content {
   min-height: 930px;
   padding-top: 1em;
 }
 
-  .posts-list,
-  .posts-list-trimmed {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .posts-list-trimmed {
-    float: left;
-    width: 84%;
-  }
-
-    .posts-list-trimmed > .post-container {
-      margin: 0.8%;
-      width: 18.3%;
-    }
-
+/* BREADCRUMBS */
   .breadcrumbs {
     color: grey;
     font-family: 'DroidSans';
@@ -39,6 +25,23 @@
       .breadcrumb-link > span {
         color: lightgrey;
       }
+  
+  /* POSTS LIST */
+  .posts-list,
+  .posts-list-trimmed {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .posts-list-trimmed {
+    float: left;
+    width: 84%;
+  }
+
+    .posts-list-trimmed > .post-container {
+      margin: 0.8%;
+      width: 18.3%;
+    }
 
     .post-container {
       background-color: white;
@@ -54,7 +57,7 @@
       }
 
         .post-category {
-          height: 200px;
+          height: 180px;
         }
 
           .post-category-link {
@@ -68,13 +71,13 @@
 
       .post-title-container {
         font-size: 1.1em;
-        height: 3.5em;
       }
 
         .post-title {
           color: #9a1d0d;
           display: inline-block;
           font-size: 1.3em;
+          min-height: 2em;
           overflow: hidden;
         }
 
@@ -91,15 +94,16 @@
         padding: 20px;
       }
 
-      .post-text-paragraph,
-      .comment-content {
-        color: #7a7575;
-        font-family: 'DroidSans';
-        font-size: 0.65em;
-        padding-top: 1em;
-        text-transform: none;
-      }
+        .post-text-paragraph,
+        .comment-content {
+          color: #7a7575;
+          font-family: 'DroidSans';
+          font-size: 0.65em;
+          padding-top: 1em;
+          text-transform: none;
+        }
 
+/* SIDE WIDGETS */
 .side-widgets {
   float: right;
   margin-right: 0.8%;
@@ -118,7 +122,8 @@
   }
   
     .side-widgets .widget-title,
-    .side-widgets ul {
+    .side-widgets ul,
+    .widget-tab {
       color: #9a1d0d;
       padding: 0.6em 0.2em 0 0.2em;
     }
@@ -133,6 +138,7 @@
       color: grey;
     }
 
+/* PAGINATION */
 .pagination {
   clear: both;
   display: flex;
@@ -161,6 +167,7 @@
     float: left;
   }
 
+/* MEDIA QUERIES FOR CONTENT */
 @media (max-width: 1600px) {
   .post-container {
     margin: 1%;

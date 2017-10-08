@@ -1,7 +1,7 @@
 /* globals $, toastr */
 import { usersData } from 'data';
-import * as error from 'error';
 import * as nav from 'update-nav';
+import * as error from 'error';
 
 const writeToLocalStorage = (userData) => {
   toastr.success('Success!');

@@ -3,7 +3,6 @@ const controller = (data) => {
     const author = req.user.username;
     const postId = req.body.postId;
     const content = req.body.content;
-    console.log(req.body);
     data.comments.create(author, content, postId)
       .then((result) => {
         res.status(200)

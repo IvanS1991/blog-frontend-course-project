@@ -1,8 +1,8 @@
 /* globals $ */
 
+import * as app from 'app';
 import * as postsController from 'posts-controller';
 import { templates } from 'templates';
-import * as app from 'app';
 import * as widgets from 'widgets';
 
 const update = () => {

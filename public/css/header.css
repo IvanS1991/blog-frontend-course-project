@@ -2,16 +2,17 @@ nav {
   padding: 0.5em;
 }
 
-.nav-expand {
-  display: none;
-}
-
 .logo > img {
   width: 15em;
 }
 
 .logo, .nav {
   padding: 0 1%;
+}
+
+/* NAV */
+.nav-expand {
+  display: none;
 }
 
   .nav-item {
@@ -30,6 +31,7 @@ nav {
   float: right;
 }
 
+/* DROPDOWN */
 .dropdown {
   position: relative;
 }
@@ -72,6 +74,7 @@ nav {
       padding: 0.3em;
     }
 
+/* FORM GROUP */
 .form-group {
   background-color: #0d0d0d;
   padding: 0.3em;
@@ -85,6 +88,7 @@ nav {
   .form-control > .form-textbox, .form-button {
     background: none;
     border: none;
+    color: white;
   }
     
     .form-textbox {
@@ -105,7 +109,12 @@ nav {
   justify-content: space-around;
 }
 
+/* MEDIA QUERIES */
 @media (max-width: 800px) {
+  nav {
+    padding: 0;
+  }
+
   .logo > img {
     width: 60%;
   }
@@ -130,10 +139,6 @@ nav {
 
   .nav-container {
     display: none;
-  }
-
-  nav {
-    padding: 0;
   }
 
   #nav-main {

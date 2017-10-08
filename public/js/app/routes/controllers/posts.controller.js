@@ -2,9 +2,9 @@
 import * as app from 'app';
 import { postsData } from 'data';
 import { templates } from 'templates';
-import * as error from 'error';
 import * as nav from 'update-nav';
 import * as widgets from 'widgets';
+import * as error from 'error';
 
 let allPosts = false;
 let postsList;
@@ -12,17 +12,24 @@ let pageCount;
 let category;
 let subCategory;
 
+// Fetches posts from DB, fetches template for post list
 const fetchPostsData = (response) => {
   postsList = response;
   pageCount = Math.ceil(postsList.count / 12);
   category = postsList.category;
   subCategory = postsList.subCategory;
   postsList.posts.forEach((post) => {
-      post.content = post.content.slice(0, 100) + '...';
+      if (post.content.length > 100) {
+        post.content = post.content.slice(0, 100) + '...';
+      }
+      if (post.title.length > 25) {
+        post.title = post.title.slice(0, 25) + '...';
+      }
     });
   return templates.get('posts-list');
 };
 
+// Renders post list, fetches template for pagination
 const renderPostsList = (template) => {
   $(app.contentContainer).html(template({
     allPosts,
@@ -33,6 +40,7 @@ const renderPostsList = (template) => {
   return templates.get('pagination');
 };
 
+// Renders pagination
 const renderPagination = (template) => {
   $(app.paginationContainer).html(template({
     pageCount,
@@ -83,7 +91,6 @@ const getById = (params) => {
   const postData = {};
   postsData.getById(id)
     .then((response) => {
-      console.log(response);
       response.post.content = response.post.content.split('\n');
       postData.post = response.post;
       postData.commentCount = response.post.comments.length;

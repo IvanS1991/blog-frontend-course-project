@@ -1,9 +1,12 @@
-/* globals toastr */
+/* globals toastr, $ */
 
+// Fires on non-registered routes
 const notFound = () => {
-  toastr.error('Page not found!');
+  $('.content').html('Not found!');
+  toastr.error('Not found');
 };
 
+// Fires on all other errors
 const handle = (err) => {
   const errMsg = err.responseJSON.msg;
   toastr.error(errMsg);
