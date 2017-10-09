@@ -107,6 +107,7 @@ const getById = (params) => {
       $(app.contentContainer).html(template(postData));
       $(app.paginationContainer).addClass('hidden');
       widgets.commentsNav();
+      window.scrollTo(0, 0);
       app.router.updatePageLinks();
     });
 };
