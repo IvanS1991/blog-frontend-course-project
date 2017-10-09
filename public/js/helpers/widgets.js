@@ -6,14 +6,12 @@ import * as commentsController from 'comments-controller';
 
 const classHidden = 'hidden';
 const classExpanded = 'expanded';
-const classSelected = 'selected';
 const classActive = 'active';
 const classTriggerLink = '.trigger-link';
 const classNavLink = '.nav-link';
 const classDropdownTrigger = '.trigger-link';
 const classCategoriesTrigger = '.category-controls-trigger';
 const classCategoriesContainer = '.category-controls-container';
-const classHomeLink = 'home-link';
 const classDropdown = '.dropdown';
 const classDropdownContainer = '.dropdown-container';
 const classNavExpand = '.nav-expand';
@@ -22,7 +20,6 @@ const classNavContainer = '.nav-container';
 const dropDown = () => {
   $(classDropdown)
     .on('mouseover', classDropdownTrigger, (event) => {
-      console.log('here');
       const $this = $(event.target);
       $(classDropdownTrigger).removeClass(classActive);
       $this.addClass(classActive);
@@ -47,19 +44,18 @@ const dropDown = () => {
   });
 
   $(window).on('hashchange', (event) => {
-    const $this = $(event.target);
     $(classNavContainer).removeClass(classExpanded);
     $(classDropdownContainer).addClass(classHidden);
     $(classCategoriesContainer).removeClass(classExpanded);
   });
 
   $(classCategoriesTrigger).on('click', (event) => {
-    $(classCategoriesContainer).addClass(classExpanded);
+    $(classCategoriesContainer).toggleClass(classExpanded);
   });
 };
 
 const userNav = () => {
-  const userNavSelector = '.user-nav';
+  const userNavSelector = '.user-nav-link';
   const btnLogin = 'btn-login';
   const btnRegister = 'btn-register';
   const btnLogout = 'btn-logout';
