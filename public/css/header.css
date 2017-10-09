@@ -82,6 +82,7 @@ nav {
 .form-group {
   background-color: #0d0d0d;
   padding: 0.3em;
+  margin-top: -0.3em;
 }
     
   .form-control {
