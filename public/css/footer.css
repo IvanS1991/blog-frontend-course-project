@@ -10,13 +10,13 @@ footer {
 /* WIDGETS */
 .widget-container {
   display: flex;
-  justify-content: space-between;
-  padding: 2em 5em;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2em 3em;
 }
 
   .dummy-widget {
-    padding: 1em;
-    width: 20%;
+    width: 300px;
   }
 
     .dummy-widget li,
@@ -34,7 +34,7 @@ footer {
     .widget-link,
     .widget-text {
       font-family: 'DroidSans';
-      font-size: 14px;
+      font-size: 0.6em;
       text-transform: none;
     }
 
@@ -53,12 +53,24 @@ footer {
   }
 
 /* MEDIA QUERIES */
-@media (max-width: 1400px) {
+@media (max-width: 1500px) {
+  .dummy-widget {
+    width: 450px;
+  }
+
+  .widget-link,
+  .widget-text {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 1200px) {
   .widget-container {
-    padding: 0;
+    padding: 1em 5%;
+    text-align: center;
   }
 
   .dummy-widget {
-    display: none;
+    width: 80%;
   }
 }

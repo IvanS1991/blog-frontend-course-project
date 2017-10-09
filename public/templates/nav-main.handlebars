@@ -1,9 +1,10 @@
-<a class="trigger-link nav-expand">Show navigation</a>
+<a class="trigger-link nav-expand"><img src="../icons/if_Menu_2190974.png"/></a>
 <div class="nav-container">
   <ul class="nav-left">
     <li class="nav-item"><a href="/home" class="trigger-link home-link selected" data-navigo>Home</a></li>
+    <li class="nav-item category-controls-trigger"><a class="trigger-link">Categories</a></li>
     {{#each this.categoriesList}}
-    <li class="nav-item">
+    <li class="nav-item category-controls-container">
       <ul class="dropdown">
         <li class="dropdown-trigger">
           <a class="trigger-link">{{this.categoryName}}</a>
@@ -31,7 +32,7 @@
       </form>
     </li>
   </ul>
-  <ul class="nav-right user-nav">
+  <ul class="nav-right user-nav-link">
     {{#if this.username}}
     <li class="nav-item">
       <ul class="dropdown">

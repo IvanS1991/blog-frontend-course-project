@@ -7,31 +7,54 @@ import * as commentsController from 'comments-controller';
 const classHidden = 'hidden';
 const classExpanded = 'expanded';
 const classSelected = 'selected';
+const classActive = 'active';
 const classTriggerLink = '.trigger-link';
 const classNavLink = '.nav-link';
 const classDropdownTrigger = '.trigger-link';
+const classCategoriesTrigger = '.category-controls-trigger';
+const classCategoriesContainer = '.category-controls-container';
 const classHomeLink = 'home-link';
+const classDropdown = '.dropdown';
 const classDropdownContainer = '.dropdown-container';
 const classNavExpand = '.nav-expand';
 const classNavContainer = '.nav-container';
 
 const dropDown = () => {
-  $(document.body).on('click', (event) => {
-    const $this = $(event.target);
-    const $trigger = $this.parents(classDropdownContainer).prev();
+  $(classDropdown)
+    .on('mouseover', classDropdownTrigger, (event) => {
+      console.log('here');
+      const $this = $(event.target);
+      $(classDropdownTrigger).removeClass(classActive);
+      $this.addClass(classActive);
+      $(classDropdownContainer).addClass(classHidden);
+      $this.parent().next().removeClass(classHidden);
+    })
+    .on('mouseleave', () => {
+      $(classDropdownContainer).addClass(classHidden);
+    });
 
-    $(classDropdownTrigger).removeClass(classSelected);
-    if ($this.hasClass(classTriggerLink.slice(1))
-      && !$this.hasClass(classHomeLink)) {
-      $this.addClass(classSelected);
-      $(classDropdownContainer).addClass(classHidden);
-      $this.parent().next().toggleClass(classHidden);
-    }
-    if ($this.hasClass(classNavLink.slice(1))) {
-      $trigger.children('a').addClass(classSelected);
-      $(classDropdownContainer).addClass(classHidden);
-      $(classNavContainer).removeClass(classExpanded);
-    }
+  $(classDropdown)
+    .on('mouseover', classNavLink, (event) => {
+      $('span').removeClass('red');
+      $(event.target).children('span').addClass('red');
+    })
+    .on('mouseleave', classNavLink, (event) => {
+      $('span').removeClass('red');
+    });
+
+  $('.user-nav-link').on('click', classTriggerLink, () => {
+    $(classCategoriesContainer).removeClass(classExpanded);
+  });
+
+  $(window).on('hashchange', (event) => {
+    const $this = $(event.target);
+    $(classNavContainer).removeClass(classExpanded);
+    $(classDropdownContainer).addClass(classHidden);
+    $(classCategoriesContainer).removeClass(classExpanded);
+  });
+
+  $(classCategoriesTrigger).on('click', (event) => {
+    $(classCategoriesContainer).addClass(classExpanded);
   });
 };
 

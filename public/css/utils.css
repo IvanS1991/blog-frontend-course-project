@@ -10,7 +10,8 @@
   clear: both;
 }
 
-.nav-item > .selected {
+.nav-item > .selected,
+.dropdown .active {
   background-color: #222222;
   color: #dcc08e;
 }
@@ -19,4 +20,8 @@
   font-size: 0.6em;
   padding: 0.5em;
   vertical-align: super;
+}
+
+.red {
+  color: #9a1d0d;
 }

@@ -55,6 +55,10 @@ nav {
       min-width: 200px;
     }
 
+      .category-controls-trigger {
+        display: none;
+      }
+
     .dropdown-items {
       background-color: #222222;
     }
@@ -132,6 +136,14 @@ nav {
     display: block;
   }
 
+    .category-controls-trigger {
+      display: block;
+    }
+
+    .category-controls-container {
+      display: none;
+    }
+
   .nav-link,
   .trigger-link {
     display: block;
@@ -158,6 +170,11 @@ nav {
     top: 0;
     width: 100%;
   }
+  
+    textarea.user-input {
+      height: 120px;
+      width: 300px;
+    }
 
   .dropdown-container {
     position: relative;
