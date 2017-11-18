@@ -1,5 +1,6 @@
 const constants = require('./api/constants');
 const start = new Date();
+const process = require('process');
 
 console.log(`Launching API...`);
 console.log(`================`);
@@ -18,7 +19,7 @@ require('./api/db/').init(constants.DB_STRING)
     console.log(`================`);
     console.log(`Launched API in ${total} ms.`);
     console.log(`================`);
-    app.listen(constants.PORT, () => {
+    app.listen(process.env.PORT || constants.PORT, () => {
       console.log(`Listening on port: ${constants.PORT}`);
       console.log(`. . . . . . . . . . . .`);
     });
