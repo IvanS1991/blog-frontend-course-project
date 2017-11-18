@@ -1,4 +1,4 @@
 {
   "PORT": 8000,
-  "DB_STRING": "mongodb://localhost/blog-course-project"
+  "DB_STRING": "mongodb://ivans1991:ivans1991@ds113586.mlab.com:13586/blog-frontend-course-project"
 }
